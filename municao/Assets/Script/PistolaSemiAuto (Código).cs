@@ -28,7 +28,9 @@ public class PistolaSemiAuto : MonoBehaviour
         {
             StartCoroutine(Recarregar());
         }
+
         textoMunicao.text = "Balas: " + munition;
+
         if (Input.GetButtonDown("Fire1") && Time.time >= proximoDisparo && munition > 0 && !recarregando)
         {
             munition--;

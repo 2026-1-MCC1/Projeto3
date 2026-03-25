@@ -913,7 +913,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   esferaPrefab: {fileID: 1751314022}
   pontoDisparo: {fileID: 1895867187}
-  forcaDisparo: 100
+  forcaDisparo: 15
   tempoEntreDisparos: 0.3
   textoMunicao: {fileID: 1601259758}
   tempoRecarga: 5
@@ -1001,14 +1001,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776191195}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.48339444, y: -0.5065614, z: 0.51380706, w: 0.49570933}
+  m_LocalRotation: {x: 0.42936084, y: -0.55713105, z: 0.45848355, w: 0.54318243}
   m_LocalPosition: {x: 2.92, y: 1.53, z: -4.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1895867187}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 88.842, y: -15.711, z: 76.653}
+  m_LocalEulerAnglesHint: {x: 77.772, y: -87.156, z: 5.326}
 --- !u!1 &1895867186
 GameObject:
   m_ObjectHideFlags: 0
