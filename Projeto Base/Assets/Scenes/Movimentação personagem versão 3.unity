@@ -587,7 +587,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PistolaSemiAuto
   esferaPrefab: {fileID: 2126500812660103351, guid: eca554800acc87d45820f65d409ab146, type: 3}
   pontoDisparo: {fileID: 1575753019}
-  forcaDisparo: 200
+  forcaDisparo: 15
   tempoEntreDisparos: 0.8
 --- !u!1 &1278504963
 GameObject:
@@ -1123,16 +1123,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   moveSpeed: 7
-  mouseSensitivity: 7
+  mouseSensitivity: 2
   verticalClamp: 60
   cameraContainer: {fileID: 581143399}
   bulletPrefab: {fileID: 0}
   muzzle: {fileID: 0}
-  jumpForce: 7
+  jumpForce: 5
   Foot: {fileID: 1278504964}
   colisaoLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 55
   gravity: -20
 --- !u!23 &1416167648
 MeshRenderer:
