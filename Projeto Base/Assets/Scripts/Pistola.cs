@@ -10,6 +10,9 @@ public class PistolaSemiAuto : MonoBehaviour
 
     private float proximoDisparo = 0f;
 
+    [Header("Referências")]
+    public Transform cameraContainer;
+
     void Update()
     {
         // Segurar botão para atirar continuamente
@@ -26,6 +29,7 @@ public class PistolaSemiAuto : MonoBehaviour
             }
         }
     }
+
     private void Start()
 
     {
@@ -33,9 +37,14 @@ public class PistolaSemiAuto : MonoBehaviour
             tempoEntreDisparos = 0.2f;
             proximoDisparo = Time.time;
         }
+        {
+            cameraContainer = Camera.main.transform;
+        }
     }
     void Atirar()
     {
+        Vector3 direcao = Camera.main.transform.forward;
+
         if (esferaPrefab == null || pontoDisparo == null)
         {
             Debug.LogError("Prefab ou pontoDisparo não configurado!");
@@ -45,14 +54,14 @@ public class PistolaSemiAuto : MonoBehaviour
         GameObject esfera = Instantiate(
             esferaPrefab,
             pontoDisparo.position,
-            pontoDisparo.rotation
+            Quaternion.LookRotation(direcao)
         );
 
         // Forca RB
         Rigidbody rb = esfera.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.AddForce(pontoDisparo.forward * forcaDisparo, ForceMode.Impulse);
+            rb.AddForce(direcao * forcaDisparo, ForceMode.Impulse);
         }
 
         // Ignora colisão com a arma

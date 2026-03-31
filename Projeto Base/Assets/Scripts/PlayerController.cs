@@ -3,8 +3,8 @@ using UnityEngine;
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     [Header("Movimento")]
-        public float moveSpeed = 7f;
-  
+    public float moveSpeed = 7f;
+
     [Header("Mouse")]
     public float mouseSensitivity = 7f;
     public float verticalClamp = 60f;
@@ -22,7 +22,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public float jumpForce = 7f;
     private Rigidbody rb;
     private bool estaNoChao;
-    
+
     [SerializeField] private Transform Foot;
     [SerializeField] private LayerMask colisaoLayer;
 
@@ -32,21 +32,23 @@ public class NewMonoBehaviourScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         {
             controller = GetComponent<CharacterController>();
             animator = GetComponentInChildren<Animator>();
-        }        
+        }
     }
     float rotacaoY;
     // Update is called once per frame
     void Update()
     {
         // --- Rotação horizontal do Player (eixo Y) ---
-          float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
 
-    rotacaoY += mouseX;
+        rotacaoY += mouseX;
 
-    transform.rotation = Quaternion.Euler(0f, rotacaoY, 0f);
+        transform.rotation = Quaternion.Euler(0f, rotacaoY, 0f);
 
         // --- Rotação vertical da Camera (eixo X Local) ---
         float mouseY = Input.GetAxis("Mouse Y");
@@ -83,10 +85,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
         animator.SetBool("EstaNoChao", estaNoChao);
         animator.SetFloat("Horizontal", h);
         animator.SetFloat("Vertical", v);
- 
+
         // --- Pulo do Player ---
         estaNoChao = Physics.CheckSphere(Foot.position, 0.3f, colisaoLayer);
-       animator.SetBool("EstaNoChao", estaNoChao);
+        animator.SetBool("EstaNoChao", estaNoChao);
 
         if (Input.GetKeyDown(KeyCode.Space) && estaNoChao)
         {
@@ -97,7 +99,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         if (forcaY > -9.81f)
         {
             forcaY += -9.81f * Time.deltaTime;
-        }          
+        }
         controller.Move(new Vector3(0f, forcaY, 0f) * Time.deltaTime);
     }
 }
