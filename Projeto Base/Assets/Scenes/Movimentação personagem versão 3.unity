@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 17f338b5d185dd74ba2f4268e41c8b01, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -223,7 +223,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9, y: 0.99999994, z: 0.9}
+  m_Size: {x: 0.9, y: 0.5, z: 0.9}
   m_Center: {x: 0, y: 0.49999997, z: 0}
 --- !u!114 &100650509
 MonoBehaviour:
@@ -551,6 +551,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 39c2de267de349847b45fd4befe3c210, type: 3}
   m_PrefabInstance: {fileID: 295315317}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &318549597 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f8f37284c47d56448b53dd43d91ac4e, type: 3}
+  m_PrefabInstance: {fileID: 1745029661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &344391693
 GameObject:
   m_ObjectHideFlags: 0
@@ -849,7 +854,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.21, z: 1}
+  m_Size: {x: 1, y: 0, z: 1}
   m_Center: {x: 0.000000014901161, y: 0.105, z: -0.00000011920929}
 --- !u!114 &410893372
 MonoBehaviour:
@@ -1235,7 +1240,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9, y: 0.99999994, z: 0.9}
+  m_Size: {x: 0.9, y: 0.5, z: 0.9}
   m_Center: {x: 0, y: 0.49999997, z: 0}
 --- !u!114 &821738293
 MonoBehaviour:
@@ -1441,7 +1446,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b2983648cba351f4689433a43098f5da, type: 3}
       propertyPath: m_Name
-      value: tower-round-base (1)
+      value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2983648cba351f4689433a43098f5da, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1515,7 +1524,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.97, y: 0.21, z: 0.97}
+  m_Size: {x: 0.97, y: 0, z: 0.97}
   m_Center: {x: 0, y: 0.105, z: -0.000000007450581}
 --- !u!114 &1146898212
 MonoBehaviour:
@@ -1699,7 +1708,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b2983648cba351f4689433a43098f5da, type: 3}
       propertyPath: m_Name
-      value: tower-round-base (2)
+      value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2983648cba351f4689433a43098f5da, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1736,7 +1749,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0.21, z: 1}
+  m_Size: {x: 1, y: 0, z: 1}
   m_Center: {x: 0.00000011920929, y: 0.105, z: -0.000000007450581}
 --- !u!114 &1330348647
 MonoBehaviour:
@@ -2512,7 +2525,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b2983648cba351f4689433a43098f5da, type: 3}
       propertyPath: m_Name
-      value: tower-round-base
+      value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2983648cba351f4689433a43098f5da, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2546,7 +2563,7 @@ GameObject:
   - component: {fileID: 1416167652}
   m_Layer: 6
   m_Name: Player (1)
-  m_TagString: Untagged
+  m_TagString: gameObject
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2641,7 +2658,7 @@ Transform:
   m_GameObject: {fileID: 1416167643}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.296, y: 16.143, z: -6.731}
+  m_LocalPosition: {x: 0.296, y: 16.094, z: -6.731}
   m_LocalScale: {x: 0.38805115, y: 0.38805115, z: 0.38805115}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -3166,7 +3183,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.97, y: 0.21, z: 0.97}
+  m_Size: {x: 0.97, y: 0, z: 0.97}
   m_Center: {x: 0.000000014901161, y: 0.105, z: -0.00000011920929}
 --- !u!114 &1665494937
 MonoBehaviour:
@@ -3377,7 +3394,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9, y: 0.99999994, z: 0.9}
+  m_Size: {x: 0.9, y: 0.5, z: 0.9}
   m_Center: {x: 0, y: 0.49999997, z: 0}
 --- !u!114 &1709071217
 MonoBehaviour:
@@ -3460,13 +3477,53 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f8f37284c47d56448b53dd43d91ac4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1745029666}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 6f8f37284c47d56448b53dd43d91ac4e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1745029665}
   m_SourcePrefab: {fileID: 100100000, guid: 6f8f37284c47d56448b53dd43d91ac4e, type: 3}
 --- !u!4 &1745029662 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6f8f37284c47d56448b53dd43d91ac4e, type: 3}
   m_PrefabInstance: {fileID: 1745029661}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1745029665
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318549597}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c0e195363273d44a06da724bc63e2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Magnet
+  velocidade: 500
+--- !u!65 &1745029666
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 318549597}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.7543278, y: 0.5, z: 0.7543278}
+  m_Center: {x: 0.000000014901161, y: 0.2999995, z: -0.000000029802322}
 --- !u!4 &1750472164 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d0cdbbdae7cb127448d5bebdf8414529, type: 3}
@@ -3960,7 +4017,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9, y: 0.99999994, z: 0.9}
+  m_Size: {x: 0.9, y: 0.5, z: 0.9}
   m_Center: {x: 0, y: 0.49999997, z: 0}
 --- !u!114 &2041954896
 MonoBehaviour:
@@ -4038,7 +4095,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b2983648cba351f4689433a43098f5da, type: 3}
       propertyPath: m_Name
-      value: tower-round-base (3)
+      value: Platform
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b2983648cba351f4689433a43098f5da, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
