@@ -1,3 +1,5 @@
+using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class PistolaSemiAuto : MonoBehaviour
@@ -7,27 +9,43 @@ public class PistolaSemiAuto : MonoBehaviour
     public Transform pontoDisparo;
     public float forcaDisparo = 200f;
     public float tempoEntreDisparos = 0.8f;
+    public TextMeshProUGUI textoMunicao;
+    public float tempoRecarga = 5f;
 
+    private int munition = 30;
+    private int munitionMax = 30;
     private float proximoDisparo = 0f;
+    private bool recarregando = false;
 
     [Header("Referências")]
     public Transform cameraContainer;
 
     void Update()
     {
-        // Segurar botão para atirar continuamente
-        if (Input.GetMouseButton(0))
+        if (munition == 0 && !recarregando && Input.GetButtonDown("Fire1"))
         {
-            Debug.Log("Segurando botão");
-
-            if (Time.time >= proximoDisparo)
-            {
-                Debug.Log("Atirando");
-
-                Atirar();
-                proximoDisparo = Time.time + tempoEntreDisparos;
-            }
+            StartCoroutine(Recarregar());
         }
+
+        textoMunicao.text = "Balas: " + munition;
+
+        if (Input.GetButtonDown("Fire1") && Time.time >= proximoDisparo && munition > 0 && !recarregando)
+        {
+            munition--;
+            Atirar();
+            proximoDisparo = Time.time + tempoEntreDisparos;
+        }
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            munition = 30;
+            StartCoroutine(Recarregar());
+        }
+        if (recarregando)
+        {
+            textoMunicao.text = "Recarregando...";
+        }
+        if (recarregando)
+            return;
     }
 
     private void Start()
@@ -96,5 +114,14 @@ public class PistolaSemiAuto : MonoBehaviour
             case 3: return Color.yellow;
             default: return Color.white;
         }
+    }
+    IEnumerator Recarregar()
+    {
+        recarregando = true;
+
+            yield return new WaitForSeconds(tempoRecarga);
+
+            munition = munitionMax;
+            recarregando = false;
     }
 }
