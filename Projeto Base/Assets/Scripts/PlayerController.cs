@@ -1,4 +1,4 @@
-ï»¿using UnityEngine;
+using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
@@ -9,18 +9,18 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public float mouseSensitivity = 7f;
     public float verticalClamp = 60f;
 
-    [Header("ReferÃªncias")]
+    [Header("Referências")]
     public Transform cameraContainer;
 
     [Header("Tiro")]
     public GameObject bulletPrefab;
     public Transform muzzle;
-
     private Animator animator;
     private float verticalRotation = 0f;
 
     [Header("Pulo")]
     public float jumpForce = 7f;
+    private Rigidbody rb;
     private bool estaNoChao;
 
     [SerializeField] private Transform Foot;
@@ -28,36 +28,37 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private CharacterController controller;
     private float forcaY;
-    public float gravity = -15f;
-
-    // ðŸ”¥ NOVO: plataforma atual
-    private Platform plataformaAtual;
-
-    float rotacaoY;
-
+    public float gravity = -20f;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-
-        controller = GetComponent<CharacterController>();
-        animator = GetComponentInChildren<Animator>();
+        {
+            controller = GetComponent<CharacterController>();
+            animator = GetComponentInChildren<Animator>();
+        }
     }
-
+    float rotacaoY;
+    // Update is called once per frame
     void Update()
     {
-        // --- ROTACAO PLAYER ---
+        // --- Rotação horizontal do Player (eixo Y) ---
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
+
         rotacaoY += mouseX;
+
         transform.rotation = Quaternion.Euler(0f, rotacaoY, 0f);
 
-        // --- ROTACAO CAMERA ---
+        // --- Rotação vertical da Camera (eixo X Local) ---
         float mouseY = Input.GetAxis("Mouse Y");
         verticalRotation -= mouseY;
-        verticalRotation = Mathf.Clamp(verticalRotation, -verticalClamp, verticalClamp);
+        verticalRotation = Mathf.Clamp(
+            verticalRotation, -verticalClamp, verticalClamp);
         cameraContainer.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
 
-        // --- MOVIMENTO ---
+
+        // --- Movimentação WASD / Setas ---
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
@@ -72,50 +73,33 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
         Vector3 moviment = forward * v + right * h;
 
-        // --- CHÃƒO ---
-        estaNoChao = Physics.CheckSphere(Foot.position, 0.3f, colisaoLayer);
+        controller.Move(moviment * moveSpeed * Time.deltaTime);
+
+        bool estaNoChao = controller.isGrounded;
 
         if (estaNoChao && forcaY < 0)
         {
-            forcaY = -2f;
+            forcaY = -2f; // mantém colado no chão
         }
 
-        // --- DETECTAR PLATAFORMA ---
-        RaycastHit hit;
-        if (Physics.Raycast(Foot.position, Vector3.down, out hit, 0.6f))
-        {
-            plataformaAtual = hit.collider.GetComponent<Platform>();
-        }
-        else
-        {
-            plataformaAtual = null;
-        }
-
-        // --- PULO ---
-        if (Input.GetKeyDown(KeyCode.Space) && estaNoChao)
-        {
-            forcaY = jumpForce;
-            animator.SetTrigger("Saltar");
-        }
-
-        // --- GRAVIDADE ---
-        forcaY += gravity * Time.deltaTime;
-
-        // --- MOVIMENTO FINAL (COM PLATAFORMA) ---
-        Vector3 movimentoFinal = moviment * moveSpeed;
-
-        if (plataformaAtual != null)
-        {
-            movimentoFinal += plataformaAtual.DeltaMovimento / Time.deltaTime;
-        }
-
-        movimentoFinal.y = forcaY;
-
-        controller.Move(movimentoFinal * Time.deltaTime);
-
-        // --- ANIMAÃ‡ÃƒO ---
         animator.SetBool("EstaNoChao", estaNoChao);
         animator.SetFloat("Horizontal", h);
         animator.SetFloat("Vertical", v);
+
+        // --- Pulo do Player ---
+        estaNoChao = Physics.CheckSphere(Foot.position, 0.3f, colisaoLayer);
+        animator.SetBool("EstaNoChao", estaNoChao);
+
+        if (Input.GetKeyDown(KeyCode.Space) && estaNoChao)
+        {
+            forcaY = 5f;
+            animator.SetTrigger("Saltar");
+        }
+
+        if (forcaY > -9.81f)
+        {
+            forcaY += -9.81f * Time.deltaTime;
+        }
+        controller.Move(new Vector3(0f, forcaY, 0f) * Time.deltaTime);
     }
 }
