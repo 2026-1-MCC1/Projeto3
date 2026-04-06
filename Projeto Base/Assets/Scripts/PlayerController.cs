@@ -1,4 +1,4 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class NewMonoBehaviourScript : MonoBehaviour
 {
@@ -9,18 +9,18 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public float mouseSensitivity = 7f;
     public float verticalClamp = 60f;
 
-    [Header("Referências")]
+    [Header("ReferÃªncias")]
     public Transform cameraContainer;
 
     [Header("Tiro")]
     public GameObject bulletPrefab;
     public Transform muzzle;
+
     private Animator animator;
     private float verticalRotation = 0f;
 
     [Header("Pulo")]
     public float jumpForce = 7f;
-    private Rigidbody rb;
     private bool estaNoChao;
 
     [SerializeField] private Transform Foot;
@@ -28,37 +28,36 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     private CharacterController controller;
     private float forcaY;
-    public float gravity = -20f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public float gravity = -15f;
+
+    // ðŸ”¥ NOVO: plataforma atual
+    private Platform plataformaAtual;
+
+    float rotacaoY;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        {
-            controller = GetComponent<CharacterController>();
-            animator = GetComponentInChildren<Animator>();
-        }
+
+        controller = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
     }
-    float rotacaoY;
-    // Update is called once per frame
+
     void Update()
     {
-        // --- Rotação horizontal do Player (eixo Y) ---
+        // --- ROTACAO PLAYER ---
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-
         rotacaoY += mouseX;
-
         transform.rotation = Quaternion.Euler(0f, rotacaoY, 0f);
 
-        // --- Rotação vertical da Camera (eixo X Local) ---
+        // --- ROTACAO CAMERA ---
         float mouseY = Input.GetAxis("Mouse Y");
         verticalRotation -= mouseY;
-        verticalRotation = Mathf.Clamp(
-            verticalRotation, -verticalClamp, verticalClamp);
+        verticalRotation = Mathf.Clamp(verticalRotation, -verticalClamp, verticalClamp);
         cameraContainer.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
 
-
-        // --- Movimentação WASD / Setas ---
+        // --- MOVIMENTO ---
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
@@ -73,33 +72,50 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
         Vector3 moviment = forward * v + right * h;
 
-        controller.Move(moviment * moveSpeed * Time.deltaTime);
-
-        bool estaNoChao = controller.isGrounded;
+        // --- CHÃƒO ---
+        estaNoChao = Physics.CheckSphere(Foot.position, 0.3f, colisaoLayer);
 
         if (estaNoChao && forcaY < 0)
         {
-            forcaY = -2f; // mantém colado no chão
+            forcaY = -2f;
         }
 
-        animator.SetBool("EstaNoChao", estaNoChao);
-        animator.SetFloat("Horizontal", h);
-        animator.SetFloat("Vertical", v);
+        // --- DETECTAR PLATAFORMA ---
+        RaycastHit hit;
+        if (Physics.Raycast(Foot.position, Vector3.down, out hit, 0.6f))
+        {
+            plataformaAtual = hit.collider.GetComponent<Platform>();
+        }
+        else
+        {
+            plataformaAtual = null;
+        }
 
-        // --- Pulo do Player ---
-        estaNoChao = Physics.CheckSphere(Foot.position, 0.3f, colisaoLayer);
-        animator.SetBool("EstaNoChao", estaNoChao);
-
+        // --- PULO ---
         if (Input.GetKeyDown(KeyCode.Space) && estaNoChao)
         {
-            forcaY = 5f;
+            forcaY = jumpForce;
             animator.SetTrigger("Saltar");
         }
 
-        if (forcaY > -9.81f)
+        // --- GRAVIDADE ---
+        forcaY += gravity * Time.deltaTime;
+
+        // --- MOVIMENTO FINAL (COM PLATAFORMA) ---
+        Vector3 movimentoFinal = moviment * moveSpeed;
+
+        if (plataformaAtual != null)
         {
-            forcaY += -9.81f * Time.deltaTime;
+            movimentoFinal += plataformaAtual.DeltaMovimento / Time.deltaTime;
         }
-        controller.Move(new Vector3(0f, forcaY, 0f) * Time.deltaTime);
+
+        movimentoFinal.y = forcaY;
+
+        controller.Move(movimentoFinal * Time.deltaTime);
+
+        // --- ANIMAÃ‡ÃƒO ---
+        animator.SetBool("EstaNoChao", estaNoChao);
+        animator.SetFloat("Horizontal", h);
+        animator.SetFloat("Vertical", v);
     }
 }
