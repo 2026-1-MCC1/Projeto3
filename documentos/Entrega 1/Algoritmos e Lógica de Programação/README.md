@@ -1,6 +1,6 @@
 # Acesso ao projeto LogicGame
 * Você pode baixar o arquivo zipado LogicGame
-#Abrir e rodar o projeto
+# Abrir e rodar o projeto
 * Após baixar o projeto zipado Você pode abrir a pasta com o Visual Studio. Para isso clique em:
 - Descompactar a pasta .ZIP 
 - Abrir uma pasta (ou alguma coisa similar)
