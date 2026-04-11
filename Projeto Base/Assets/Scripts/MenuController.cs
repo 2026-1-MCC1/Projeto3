@@ -4,14 +4,16 @@ using UnityEngine.Video;
 public class MenuController : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public GameObject menuOpcoes, menuConfig, rawImage;
-    private Animator animatorRawImage, animatorMenuOpcoes;
+    public GameObject MenuInicial, MenuConfig, rawImage;
+    private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig;
     void Start()
     {
         animatorRawImage = rawImage.GetComponent<Animator>();
         rawImage.SetActive(false);
-        animatorMenuOpcoes = menuOpcoes.GetComponent<Animator>();
-        menuOpcoes.SetActive(false);
+        animatorMenuInicial = MenuInicial.GetComponent<Animator>();
+        MenuInicial.SetActive(false);
+        animatorMenuConfig = MenuConfig.GetComponent<Animator>();
+        MenuConfig.SetActive(false);
     }
 
     
@@ -21,21 +23,36 @@ public class MenuController : MonoBehaviour
         { 
             videoPlayer.Play();
             rawImage.SetActive(true);
-            menuOpcoes.SetActive(true);
+            MenuInicial.SetActive(true);
             animatorRawImage.SetTrigger("FadeIn");
-            animatorMenuOpcoes.SetTrigger("FadeInOpcoes");
+            animatorMenuInicial.SetTrigger("FadeInInicial");
+            animatorMenuConfig.SetTrigger("MenuConfigANM");
         }
     }
 
-    public void Config()
+    public void menuConfig()
     {
-        menuOpcoes.SetActive(false);
-        menuConfig.SetActive(true);
+        MenuInicial.SetActive(false);
+        MenuConfig.SetActive(true);
     }
 
-    public void ReturnMenuOpcoes()
+    public void ReturnMenuInicial()
     {
-        menuOpcoes.SetActive(true);
-        menuConfig.SetActive(false);
+        MenuInicial.SetActive(true);
+        MenuConfig.SetActive(false);
+    }
+    public void Salvar()
+    {
+       SaveConfigs();
+        ReturnMenuInicial();
+    }
+    public void ExitGame() 
+    {
+        Application.Quit();
+    }
+
+    private void SaveConfigs() 
+    {
+        // Lógica para salvar as configurações
     }
 }
