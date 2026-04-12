@@ -8,8 +8,8 @@ using UnityEngine.Video;
 public class MenuController : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public GameObject MenuInicial, MenuConfig, rawImage;
-    private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig;
+    public GameObject MenuInicial, MenuConfig, rawImage, Tutorial;
+    private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig, animatorTutorial;
 
     public Dropdown resolution, quality;
     public InputField textFPS;
@@ -18,12 +18,15 @@ public class MenuController : MonoBehaviour
 
     void Start()
     {
+        videoPlayer.Prepare();
         animatorRawImage = rawImage.GetComponent<Animator>();
         rawImage.SetActive(false);
         animatorMenuInicial = MenuInicial.GetComponent<Animator>();
         MenuInicial.SetActive(false);
         animatorMenuConfig = MenuConfig.GetComponent<Animator>();
         MenuConfig.SetActive(false);
+        animatorTutorial = Tutorial.GetComponent<Animator>();
+        Tutorial.SetActive(false);
     }
 
     void Update()
@@ -36,6 +39,7 @@ public class MenuController : MonoBehaviour
             animatorRawImage.SetTrigger("FadeIn");
             animatorMenuInicial.SetTrigger("FadeInInicial");
             animatorMenuConfig.SetTrigger("MenuConfigANM");
+            animatorTutorial.SetTrigger("TutorialSlideIn");
         }
     }
 
@@ -49,6 +53,13 @@ public class MenuController : MonoBehaviour
     {
         MenuInicial.SetActive(true);
         MenuConfig.SetActive(false);
+        Tutorial.SetActive(false);
+    }
+
+    public void GoToTutorial()
+    {
+        MenuInicial.SetActive(false);
+        Tutorial.SetActive(true);
     }
     public void Salvar()
     {
