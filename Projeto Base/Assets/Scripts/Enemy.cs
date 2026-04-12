@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // --- Modificadores de acesso para classes e variáveis ---
+    // --- Variáveis globais (enemy)---
     public Transform player;
     public GameObject bulletPrefab;
     public Transform pontoDisparo2;

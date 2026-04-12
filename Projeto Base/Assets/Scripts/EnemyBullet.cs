@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    // --- Modificadores de acesso para classes e variáveis ---
+    // --- Variáveis globais (EnemyBullet) ---
     public float lifeTime = 5f;
     public int damege = 1;
     void Start()
