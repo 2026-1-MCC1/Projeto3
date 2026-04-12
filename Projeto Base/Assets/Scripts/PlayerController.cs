@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+// --- Modificadores de acesso para classes e variáveis ---
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     [Header("Movimento")]
@@ -29,7 +31,9 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private CharacterController controller;
     private float forcaY;
     public float gravity = -20f;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+
+    // --- Trava e retira o cursor, além de pegar referências do controller e animator ---
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -40,7 +44,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         }
     }
     float rotacaoY;
-    // Update is called once per frame
+    
     void Update()
     {
         // --- Rotação horizontal do Player (eixo Y) ---

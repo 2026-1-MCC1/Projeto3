@@ -1,5 +1,7 @@
 using UnityEngine;
 
+
+// --- Modificadores de acesso para classes e variáveis ---
 public class Platform : MonoBehaviour
 {
     public Transform alvo;      // Objeto que será o centro da órbita
@@ -8,12 +10,17 @@ public class Platform : MonoBehaviour
     {
         transform.RotateAround(alvo.position, Vector3.up, velocidade * Time.deltaTime);
     }
+
+
+    // --- Faz o objeto girar ao redor do alvo e se tornar filho da plataforma ao colidir ---
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag.Equals("Platform"))
             this.transform.parent = collision.transform;
     }
 
+
+    // --- Ao sair da plataforma, remove o objeto como filho dela ---
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag.Equals("Platform"))

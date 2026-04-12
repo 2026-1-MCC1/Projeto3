@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
 
+// --- Modificadores de acesso para classes e variáveis ---
 public class MenuController : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
@@ -16,6 +17,8 @@ public class MenuController : MonoBehaviour
     public Toggle LimitFPS, windowsMode, musicVolume, globalVolume, effectsVolume, autoSave;
     public Slider globalVolumeSlider, musicVolumeSlider, effectsVolumeSlider;
 
+
+    // --- Prepara o vídeo, pega os animators e desativa os elementos da UI no início ---
     void Start()
     {
         videoPlayer.Prepare();
@@ -29,6 +32,8 @@ public class MenuController : MonoBehaviour
         Tutorial.SetActive(false);
     }
 
+
+    // --- Ao pressionar qualquer tecla, inicia o vídeo, ativa a UI e dispara as animações ---
     void Update()
     {
         if (!videoPlayer.isPlaying && Input.anyKeyDown)
@@ -43,6 +48,8 @@ public class MenuController : MonoBehaviour
         }
     }
 
+
+    // --- Método público que não retorna nenhum valor ---
     public void menuConfig()
     {
         MenuInicial.SetActive(false);
@@ -71,7 +78,9 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-private void SaveConfigs() 
+
+    // --- Método privado que não retorna nenhum valor ---
+    private void SaveConfigs() 
     {
         var configs = new ConfigsModel()
         {

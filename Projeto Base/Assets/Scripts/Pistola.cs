@@ -2,6 +2,8 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
+
+// --- Modificadores de acesso para classes e variáveis ---
 public class PistolaSemiAuto : MonoBehaviour
 {
     [Header("Configurações do Tiro")]
@@ -20,6 +22,8 @@ public class PistolaSemiAuto : MonoBehaviour
     [Header("Referências")]
     public Transform cameraContainer;
 
+
+    // --- Controla tiro, recarga e atualização da munição na tela ---
     void Update()
     {
         if (munition == 0 && !recarregando && Input.GetButtonDown("Fire1"))
@@ -48,6 +52,8 @@ public class PistolaSemiAuto : MonoBehaviour
             return;
     }
 
+
+    // --- Inicializa o tempo entre disparos e pega a referência da câmera principal ---
     private void Start()
 
     {
@@ -59,6 +65,9 @@ public class PistolaSemiAuto : MonoBehaviour
             cameraContainer = Camera.main.transform;
         }
     }
+
+
+    // --- Cria um projétil na direção da câmera a partir do ponto de disparo ---
     void Atirar()
     {
         Vector3 direcao = Camera.main.transform.forward;
@@ -102,6 +111,8 @@ public class PistolaSemiAuto : MonoBehaviour
         Destroy(esfera, 5f);
     }
 
+
+    // --- Faz com que cada disparo possua uma cor diferente ---
     Color CorAleatoria()
     {
         int random = Random.Range(0, 4);
@@ -115,6 +126,8 @@ public class PistolaSemiAuto : MonoBehaviour
             default: return Color.white;
         }
     }
+
+    // --- Código para a recarga da arma com um certo intervalo de tempo ---
     IEnumerator Recarregar()
     {
         recarregando = true;
