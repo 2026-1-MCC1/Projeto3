@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    // --- Modificadores de acesso para classes e variáveis ---
     public Transform player;
     public GameObject bulletPrefab;
     public Transform pontoDisparo2;
@@ -11,9 +12,9 @@ public class Enemy : MonoBehaviour
 
     private float timer;
 
-    // Update is called once per frame
     void Update()
     {
+        // --- Segue o player com rotação suave e atira a cada certo tempo ---
         if (player == null) return;
 
         Quaternion targetRotation = Quaternion.LookRotation(player.position - pontoDisparo2.position);
@@ -32,7 +33,7 @@ public class Enemy : MonoBehaviour
     }
     void Atirar()
     {
-       
+        // --- Cria o disparo e o lança para a frente ---
         GameObject bullet = Instantiate(bulletPrefab, pontoDisparo2.position, pontoDisparo2.rotation);
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();

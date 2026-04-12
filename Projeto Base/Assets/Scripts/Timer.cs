@@ -1,16 +1,20 @@
 using UnityEngine;
 using TMPro;
+
+
+// --- Modificadores de acesso para classes e variáveis ---
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
 
     }
 
-    // Update is called once per frame
+
+    // --- Atualiza o cronômetro, reduz o tempo e exibe na tela em minutos e segundos ---
     void Update()
     {
         if (remainingTime > 0)
