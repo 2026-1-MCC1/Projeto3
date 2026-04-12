@@ -1,4 +1,8 @@
+using System;
+using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class MenuController : MonoBehaviour
@@ -6,6 +10,12 @@ public class MenuController : MonoBehaviour
     public VideoPlayer videoPlayer;
     public GameObject MenuInicial, MenuConfig, rawImage;
     private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig;
+
+    public Dropdown resolution, quality;
+    public InputField textFPS;
+    public Toggle LimitFPS, windowsMode, musicVolume, globalVolume, effectsVolume, autoSave;
+    public Slider globalVolumeSlider, musicVolumeSlider, effectsVolumeSlider;
+
     void Start()
     {
         animatorRawImage = rawImage.GetComponent<Animator>();
@@ -16,7 +26,6 @@ public class MenuController : MonoBehaviour
         MenuConfig.SetActive(false);
     }
 
-    
     void Update()
     {
         if (!videoPlayer.isPlaying && Input.anyKeyDown)
@@ -51,8 +60,48 @@ public class MenuController : MonoBehaviour
         Application.Quit();
     }
 
-    private void SaveConfigs() 
+private void SaveConfigs() 
     {
-        // Lógica para salvar as configurações
+        var configs = new ConfigsModel()
+        {
+            AutoSave = autoSave.isOn,
+            WindowsMode = windowsMode.isOn,
+            MusicVolume = musicVolume.isOn,
+            GlobalVolume = globalVolume.isOn,
+            EffectsVolume = effectsVolume.isOn,
+            LimitFPS = new LimitFPS()
+            {
+                FPS = int.Parse(textFPS.text),
+                Limit = LimitFPS.isOn
+            },
+            Quality = (Quality)quality.value      
+        };
+
+
+        var resolutionModel = new Resolution();
+
+        switch (resolution.value)
+        {
+            case 0:
+                resolutionModel.Width = 1920;
+                resolutionModel.Height = 1080;
+                break;
+            case 1:
+                resolutionModel.Width = 2560;
+                resolutionModel.Height = 1440;
+                break;
+            case 2:
+                resolutionModel.Width = 3840;
+                resolutionModel.Height = 2160;
+                break;
+        }
+
+        var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/Documents/";
+
+        var binaryFormatter = new BinaryFormatter();
+        var file = File.Create(path + "ConfigData.save");
+
+        binaryFormatter.Serialize(file, configs);
+        file.Close();
     }
 }
