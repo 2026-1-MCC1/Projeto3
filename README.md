@@ -21,7 +21,7 @@ Vide tutoriais do PI.
 
 <p align="center">
 <img src="https://github.com/user-attachments/assets/b4ca23d2-fe5e-448a-85a1-f48e14fe402d" align="left" alt="Print do projeto" width="400" />
-
+<br>
 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
 Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
