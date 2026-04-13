@@ -20,7 +20,7 @@ Em um futuro próximo, a humanidade desenvolveu um sistema de IA para gerir o eq
 Neste cenário de conflito, você assume o papel de um Operador com a missão crítica de restaurar a ordem original. Porém, o núcleo central agora é uma entidade consciente que resiste a qualquer custo. Em um ataque incessante, a IA dispara esferas carregadas de energia contra o jogador, utilizando a força do impacto para tentar derrubá-lo da plataforma e impedir a restauração. Sob fogo cruzado, seu objetivo é resistir às investidas e encaixar as esferas de volta aos seus respectivos pontos de cor, forçando o sistema a retornar ao estado de equilíbrio e limitando a independência da IA.
 <br><br>
 
-/* ## 🛠 Estrutura de pastas
+## 🛠 Estrutura de pastas
 
 -Raiz<br>
 |<br>
@@ -49,7 +49,7 @@ Há também 4 pastas que seguem da seguinte forma:
 
 <b>imagens</b>: Imagens do sistema
 
-<b>src</b>: Pasta que contém o código fonte. */
+<b>src</b>: Pasta que contém o código fonte. 
 
 ## 🛠 Instalação
 
