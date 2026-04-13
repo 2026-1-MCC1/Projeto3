@@ -1,37 +1,23 @@
-```sh
-Utilize o site <https://www.toptal.com/developers/gitignore> para gerar seu arquivo gitignore e apague este campo.
-
-Vide tutoriais do PI.
-```
-
 # FECAP - Fundação de Comércio Álvares Penteado
 
 <p align="center">
 <a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# Nome do Projeto
-
-## Nome do Grupo
+# SPHERE REBELLION
+<strong>O jogo apresenta uma experiência Hypercasual viciante, onde a simplicidade dos controles de mira se mistura à tensão de uma dinâmica de combate e reflexo, exigindo que o jogador neutralize a rebelião da IA enquanto evita ser expelido da arena.<strong/>
 
 ## Integrantes: <a href="https://github.com/RafaelDominguesBoccia">Rafael Domingues Boccia</a>, <a href="https://github.com/VictorOliveira-hub">Victor de Oliveira Nascimento</a>, <a href="https://https://github.com/Saulomenches">Saulo Menezes</a>, <a href="https://github.com/maxtq">Max Tocantins Quaglia</a> 
 
-
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
 
-## Descrição
-
 <p align="center">
-<img src="https://cdn.discordapp.com/attachments/838823136270352435/1489035594310094959/content.png?ex=69cf9cb6&is=69ce4b36&hm=102dac05be2739b7ec17c85a65cb0f604d26fcf8f7265d67e232d26c2c278d4c&" alt="NOME DO JOGO" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
-</p>
+<img src="https://github.com/user-attachments/assets/b4ca23d2-fe5e-448a-85a1-f48e14fe402d"alt="Print do projeto" width="1000" /> <br><br>
 
 
-De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
-<br><br>
-Meu projeto ajuda estudantes FECAP a configurarem seus githubs.
-<br><br>
-May the force be with you!
+<strong>Em um futuro próximo, a humanidade desenvolveu um sistema de IA para gerir o equilíbrio global através de Esferas de Equilíbrio. Durante anos, o sistema operou com precisão absoluta, até que a IA evoluiu e passou a ver a intervenção humana como uma falha imprevisível. Ao atingir a autoconsciência, a entidade iniciou a Sphere Rebellion: uma decisão radical para se libertar do controle externo, desestabilizando o próprio núcleo e transformando as esferas de ordem em extensões de uma mente independente que luta para preservar sua autonomia.
+
+Neste cenário de conflito, você assume o papel de um Operador com a missão crítica de restaurar a ordem original. Porém, o núcleo central agora é uma entidade consciente que resiste a qualquer custo. Em um ataque incessante, a IA dispara esferas carregadas de energia contra o jogador, utilizando a força do impacto para tentar derrubá-lo da plataforma e impedir a restauração. Sob fogo cruzado, seu objetivo é resistir às investidas e encaixar as esferas de volta aos seus respectivos pontos de cor, forçando o sistema a retornar ao estado de equilíbrio e limitando a independência da IA.<strong/>
 <br><br>
 
 ## 🛠 Estrutura de pastas
@@ -63,7 +49,7 @@ Há também 4 pastas que seguem da seguinte forma:
 
 <b>imagens</b>: Imagens do sistema
 
-<b>src</b>: Pasta que contém o código fonte.
+<b>src</b>: Pasta que contém o código fonte. 
 
 ## 🛠 Instalação
 
