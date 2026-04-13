@@ -31,9 +31,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private CharacterController controller;
     private float forcaY;
     public float gravity = -20f;
+<<<<<<< HEAD
 
 
     // --- Trava e retira o cursor, alÈm de pegar referÍncias do controller e animator ---
+=======
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+>>>>>>> parent of 02c109c (atualiza√ß√£o do player e platarforma)
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -44,7 +48,11 @@ public class NewMonoBehaviourScript : MonoBehaviour
         }
     }
     float rotacaoY;
+<<<<<<< HEAD
     
+=======
+    // Update is called once per frame
+>>>>>>> parent of 02c109c (atualiza√ß√£o do player e platarforma)
     void Update()
     {
         // --- RotaÁ„o horizontal do Player (eixo Y) ---
