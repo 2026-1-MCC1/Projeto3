@@ -20,7 +20,8 @@ Vide tutoriais do PI.
 ## Descrição
 
 <p align="center">
-<img src="C:\Users\saulo\OneDrive\Imagens\Rebelião da esfera no laboratório.PNG alt="Sphere Rebelion" border="0">
+<img src=" <img width="1536" height="1024" alt="Rebelião da esfera no laboratório" src="https://github.com/user-attachments/assets/b4ca23d2-fe5e-448a-85a1-f48e14fe402d" />
+alt="Sphere Rebelion" border="0">
   Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
 </p>
 
