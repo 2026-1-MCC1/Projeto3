@@ -10,9 +10,7 @@ Vide tutoriais do PI.
 <a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# Nome do Projeto
-
-## Nome do Grupo
+# Sphere Rebelion
 
 ## Integrantes: <a href="https://github.com/RafaelDominguesBoccia">Rafael Domingues Boccia</a>, <a href="https://github.com/VictorOliveira-hub">Victor de Oliveira Nascimento</a>, <a href="https://https://github.com/Saulomenches">Saulo Menezes</a>, <a href="https://github.com/maxtq">Max Tocantins Quaglia</a> 
 
@@ -22,7 +20,7 @@ Vide tutoriais do PI.
 ## Descrição
 
 <p align="center">
-<img src="https://cdn.discordapp.com/attachments/838823136270352435/1489035594310094959/content.png?ex=69cf9cb6&is=69ce4b36&hm=102dac05be2739b7ec17c85a65cb0f604d26fcf8f7265d67e232d26c2c278d4c&" alt="NOME DO JOGO" border="0">
+<img src="C:\Users\saulo\OneDrive\Imagens\Rebelião da esfera no laboratório.PNG alt="Sphere Rebelion" border="0">
   Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
 </p>
 
