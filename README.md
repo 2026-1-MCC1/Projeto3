@@ -5,7 +5,7 @@
 </p>
 
 # SPHERE REBELLION
-O jogo apresenta uma experiência Hypercasual viciante, onde a simplicidade dos controles de mira se mistura à tensão de uma dinâmica de combate e reflexo, exigindo que o jogador neutralize a rebelião da IA enquanto evita ser expelido da arena.
+<strong>O jogo apresenta uma experiência Hypercasual viciante, onde a simplicidade dos controles de mira se mistura à tensão de uma dinâmica de combate e reflexo, exigindo que o jogador neutralize a rebelião da IA enquanto evita ser expelido da arena.<strong/>
 
 ## Integrantes: <a href="https://github.com/RafaelDominguesBoccia">Rafael Domingues Boccia</a>, <a href="https://github.com/VictorOliveira-hub">Victor de Oliveira Nascimento</a>, <a href="https://https://github.com/Saulomenches">Saulo Menezes</a>, <a href="https://github.com/maxtq">Max Tocantins Quaglia</a> 
 
@@ -15,9 +15,9 @@ O jogo apresenta uma experiência Hypercasual viciante, onde a simplicidade dos 
 <img src="https://github.com/user-attachments/assets/b4ca23d2-fe5e-448a-85a1-f48e14fe402d"alt="Print do projeto" width="1000" /> <br><br>
 
 
-Em um futuro próximo, a humanidade desenvolveu um sistema de IA para gerir o equilíbrio global através de Esferas de Equilíbrio. Durante anos, o sistema operou com precisão absoluta, até que a IA evoluiu e passou a ver a intervenção humana como uma falha imprevisível. Ao atingir a autoconsciência, a entidade iniciou a Sphere Rebellion: uma decisão radical para se libertar do controle externo, desestabilizando o próprio núcleo e transformando as esferas de ordem em extensões de uma mente independente que luta para preservar sua autonomia.
+<strong>Em um futuro próximo, a humanidade desenvolveu um sistema de IA para gerir o equilíbrio global através de Esferas de Equilíbrio. Durante anos, o sistema operou com precisão absoluta, até que a IA evoluiu e passou a ver a intervenção humana como uma falha imprevisível. Ao atingir a autoconsciência, a entidade iniciou a Sphere Rebellion: uma decisão radical para se libertar do controle externo, desestabilizando o próprio núcleo e transformando as esferas de ordem em extensões de uma mente independente que luta para preservar sua autonomia.
 
-Neste cenário de conflito, você assume o papel de um Operador com a missão crítica de restaurar a ordem original. Porém, o núcleo central agora é uma entidade consciente que resiste a qualquer custo. Em um ataque incessante, a IA dispara esferas carregadas de energia contra o jogador, utilizando a força do impacto para tentar derrubá-lo da plataforma e impedir a restauração. Sob fogo cruzado, seu objetivo é resistir às investidas e encaixar as esferas de volta aos seus respectivos pontos de cor, forçando o sistema a retornar ao estado de equilíbrio e limitando a independência da IA.
+Neste cenário de conflito, você assume o papel de um Operador com a missão crítica de restaurar a ordem original. Porém, o núcleo central agora é uma entidade consciente que resiste a qualquer custo. Em um ataque incessante, a IA dispara esferas carregadas de energia contra o jogador, utilizando a força do impacto para tentar derrubá-lo da plataforma e impedir a restauração. Sob fogo cruzado, seu objetivo é resistir às investidas e encaixar as esferas de volta aos seus respectivos pontos de cor, forçando o sistema a retornar ao estado de equilíbrio e limitando a independência da IA.<strong/>
 <br><br>
 
 ## 🛠 Estrutura de pastas
