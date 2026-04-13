@@ -21,10 +21,6 @@ Vide tutoriais do PI.
 
 <p align="center">
 <img src="https://github.com/user-attachments/assets/b4ca23d2-fe5e-448a-85a1-f48e14fe402d" alt="Print do meu projeto" width="500" />
-alt="Sphere Rebelion" border="0">
-  Game by <a href="http://www.nyphotographic.com/">Nick Youngson</a> <a rel="license" href="https://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a> <a href="http://pix4free.org/">Pix4free</a>
-</p>
-
 
 De um a dois parágrafos sobre o que é seu projeto e o que ele faz.
 <br><br>
