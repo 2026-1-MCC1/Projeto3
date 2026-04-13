@@ -9,7 +9,7 @@
 
 ## Integrantes: <a href="https://github.com/RafaelDominguesBoccia">Rafael Domingues Boccia</a>, <a href="https://github.com/VictorOliveira-hub">Victor de Oliveira Nascimento</a>, <a href="https://https://github.com/Saulomenches">Saulo Menezes</a>, <a href="https://github.com/maxtq">Max Tocantins Quaglia</a> 
 
-## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>]
+## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
 
 <p align="center">
 <img src="https://github.com/user-attachments/assets/b4ca23d2-fe5e-448a-85a1-f48e14fe402d"alt="Print do projeto" width="1000" /> <br><br>
