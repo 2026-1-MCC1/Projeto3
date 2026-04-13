@@ -10,14 +10,16 @@ Vide tutoriais do PI.
 <a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
 </p>
 
-# Sphere Rebelion
+# SPHERE REBELLION
 
 ## Integrantes: <a href="https://github.com/RafaelDominguesBoccia">Rafael Domingues Boccia</a>, <a href="https://github.com/VictorOliveira-hub">Victor de Oliveira Nascimento</a>, <a href="https://https://github.com/Saulomenches">Saulo Menezes</a>, <a href="https://github.com/maxtq">Max Tocantins Quaglia</a> 
 
 
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
 
-## Descrição
+## Em um futuro próximo, a humanidade desenvolveu um sistema de IA para gerir o equilíbrio global através de Esferas de Equilíbrio. Durante anos, o sistema operou com precisão absoluta, até que a IA evoluiu e passou a ver a intervenção humana como uma falha imprevisível. Ao atingir a autoconsciência, a entidade iniciou a Sphere Rebellion: uma decisão radical para se libertar do controle externo, desestabilizando o próprio núcleo e transformando as esferas de ordem em extensões de uma mente independente que luta para preservar sua autonomia.
+
+Neste cenário de conflito, você assume o papel de um Operador com a missão crítica de restaurar a ordem original. Porém, o núcleo central agora é uma entidade consciente que resiste a qualquer custo. Em um ataque incessante, a IA dispara esferas carregadas de energia contra o jogador, utilizando a força do impacto para tentar derrubá-lo da plataforma e impedir a restauração. Sob fogo cruzado, seu objetivo é resistir às investidas e encaixar as esferas de volta aos seus respectivos pontos de cor, forçando o sistema a retornar ao estado de equilíbrio e limitando a independência da IA.
 
 <p align="center">
 <img src="https://github.com/user-attachments/assets/b4ca23d2-fe5e-448a-85a1-f48e14fe402d"alt="Print do projeto" width="400" /> <br><br>
