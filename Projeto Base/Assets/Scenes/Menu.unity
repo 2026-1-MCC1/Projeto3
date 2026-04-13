@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ADVENTURE platforms
+  m_text: SPHERE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9284366599e7da44380aa2212dd55502, type: 2}
   m_sharedMaterial: {fileID: 4427904663315613809, guid: 9284366599e7da44380aa2212dd55502, type: 2}
@@ -4393,7 +4393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8166516, y: 0.07681553}
   m_AnchorMax: {x: 0.949697, y: 0.141}
-  m_AnchoredPosition: {x: -465.94, y: -11.9}
+  m_AnchoredPosition: {x: -465.94, y: -11.899963}
   m_SizeDelta: {x: 146.0795, y: 23.80032}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1226284836
@@ -5183,7 +5183,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ADVENTURE platforms
+  m_text: SPHERE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9284366599e7da44380aa2212dd55502, type: 2}
   m_sharedMaterial: {fileID: 4427904663315613809, guid: 9284366599e7da44380aa2212dd55502, type: 2}
@@ -5457,7 +5457,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: platforms
+  m_text: rebellion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9284366599e7da44380aa2212dd55502, type: 2}
   m_sharedMaterial: {fileID: 4427904663315613809, guid: 9284366599e7da44380aa2212dd55502, type: 2}
@@ -7281,7 +7281,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: platforms
+  m_text: rebellion
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9284366599e7da44380aa2212dd55502, type: 2}
   m_sharedMaterial: {fileID: 4427904663315613809, guid: 9284366599e7da44380aa2212dd55502, type: 2}
