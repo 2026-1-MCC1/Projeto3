@@ -2,10 +2,11 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Runtime.Serialization.Formatters.Binary;
-using UnityEngine;
 using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using static UnityEngine.Rendering.STP;
 
 // --- Modificadores de acesso para classes e variáveis ---
 public class MenuController : MonoBehaviour
@@ -39,7 +40,7 @@ public class MenuController : MonoBehaviour
     void Update()
     {
         if (!videoPlayer.isPlaying && Input.anyKeyDown)
-        { 
+        {
             videoPlayer.Play();
             rawImage.SetActive(true);
             MenuInicial.SetActive(true);
@@ -74,24 +75,40 @@ public class MenuController : MonoBehaviour
     }
     public void Salvar()
     {
-       SaveConfigs();
+        SaveConfigs();
         ReturnMenuInicial();
     }
-    public void ExitGame() 
+    public void ExitGame()
     {
         Application.Quit();
     }
 
+    private void ApplyConfigs()
+    {
+        var configs = LoadConfigs();
 
+        if(configs != null)
+        {
+            // Aplica a resolução e o modo de janela
+            Screen.SetResolution(configs.Resolution.Width, configs.Resolution.Height, !configs.WindowsMode);
+
+           // Aplica o limite de FPS
+            Application.targetFrameRate = configs.LimitFPS.Limit? configs.LimitFPS.FPS : -1;
+            // Aplica os volumes
+            SceneConfigs.globalVolume = configs.GlobalVolumeValue;
+            SceneConfigs.musicVolume = configs.MusicVolumeValue;
+            SceneConfigs.effectsVolume = configs.EffectsVolumeValue;
+        }
+    }
     // --- Método privado que não retorna nenhum valor | este método carrega as configurações do jogo (objetos) salvas anteriormente  ---
-    private void LoadConfigs()
+    private ConfigsModel LoadConfigs()
     {
         try
         {
             var path = Application.persistentDataPath + "/ConfigData.save";
 
             if (!File.Exists(path))
-                return;
+                return null; 
 
             var binaryFormatter = new BinaryFormatter();
 
@@ -117,18 +134,18 @@ public class MenuController : MonoBehaviour
                     LimitFPSToggle.isOn = configs.LimitFPS.Limit;
                 }
 
-                AudioListener.volume = configs.GlobalVolumeValue;
                 globalVolumeSlider.value = configs.GlobalVolumeValue;
                 musicVolumeSlider.value = configs.MusicVolumeValue;
                 effectsVolumeSlider.value = configs.EffectsVolumeValue;
             }
-        }
+
+            return configs;
+        }   
         catch(Exception ex)
         {
-            Debug.LogError("Erro ao carregar as configurações: " + ex.ToString()); 
+            return null;
         }
     }
-
 
     // --- Método privado que não retorna nenhum valor | este método salva as configurações do jogo (objetos) em uma pasta reservada que pode ser carregada posteriormente ---
     private void SaveConfigs() 
