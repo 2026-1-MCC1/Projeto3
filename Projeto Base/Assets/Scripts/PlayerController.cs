@@ -13,10 +13,6 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     [Header("Referências")]
     public Transform cameraContainer;
-
-    [Header("Tiro")]
-    public GameObject bulletPrefab;
-    public Transform muzzle;
     private Animator animator;
     private float verticalRotation = 0f;
 

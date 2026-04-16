@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform pontoDisparo2;
 
-    public float forcaDisparo = 20f;
+    public float forcaDisparo = 30f;
     public float fireRate = 2f;
 
     private float timer;
