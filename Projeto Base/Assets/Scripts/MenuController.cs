@@ -1,9 +1,19 @@
 using System;
 using System.IO;
+<<<<<<< HEAD
 using System.Runtime.Serialization.Formatters.Binary;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+=======
+using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.Video;
+using static UnityEngine.Rendering.STP;
+>>>>>>> main
 
 // --- Modificadores de acesso para classes e variáveis ---
 public class MenuController : MonoBehaviour
@@ -12,9 +22,15 @@ public class MenuController : MonoBehaviour
     public GameObject MenuInicial, MenuConfig, rawImage, Tutorial;
     private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig, animatorTutorial;
 
+<<<<<<< HEAD
     public Dropdown resolution, quality;
     public InputField textFPS;
     public Toggle LimitFPS, windowsMode, musicVolume, globalVolume, effectsVolume, autoSave;
+=======
+    public TMP_Dropdown resolution;
+    public TMP_InputField textFPS;
+    public Toggle LimitFPSToggle;
+>>>>>>> main
     public Slider globalVolumeSlider, musicVolumeSlider, effectsVolumeSlider;
 
 
@@ -37,7 +53,11 @@ public class MenuController : MonoBehaviour
     void Update()
     {
         if (!videoPlayer.isPlaying && Input.anyKeyDown)
+<<<<<<< HEAD
         { 
+=======
+        {
+>>>>>>> main
             videoPlayer.Play();
             rawImage.SetActive(true);
             MenuInicial.SetActive(true);
@@ -52,6 +72,11 @@ public class MenuController : MonoBehaviour
     // --- Método público que não retorna nenhum valor ---
     public void menuConfig()
     {
+<<<<<<< HEAD
+=======
+        LoadConfigs();
+
+>>>>>>> main
         MenuInicial.SetActive(false);
         MenuConfig.SetActive(true);
     }
@@ -70,14 +95,22 @@ public class MenuController : MonoBehaviour
     }
     public void Salvar()
     {
+<<<<<<< HEAD
        SaveConfigs();
         ReturnMenuInicial();
     }
     public void ExitGame() 
+=======
+        SaveConfigs();
+        ReturnMenuInicial();
+    }
+    public void ExitGame()
+>>>>>>> main
     {
         Application.Quit();
     }
 
+<<<<<<< HEAD
 
     // --- Método privado que não retorna nenhum valor ---
     private void SaveConfigs() 
@@ -97,6 +130,93 @@ public class MenuController : MonoBehaviour
             Quality = (Quality)quality.value      
         };
 
+=======
+    private void ApplyConfigs()
+    {
+        var configs = LoadConfigs();
+
+        if(configs != null)
+        {
+            // Aplica a resolução e o modo de janela
+            Screen.SetResolution(configs.Resolution.Width, configs.Resolution.Height, !configs.WindowsMode);
+
+           // Aplica o limite de FPS
+            Application.targetFrameRate = configs.LimitFPS.Limit? configs.LimitFPS.FPS : -1;
+            // Aplica os volumes
+            SceneConfigs.globalVolume = configs.GlobalVolumeValue;
+            SceneConfigs.musicVolume = configs.MusicVolumeValue;
+            SceneConfigs.effectsVolume = configs.EffectsVolumeValue;
+        }
+    }
+    // --- Método privado que não retorna nenhum valor | este método carrega as configurações do jogo (objetos) salvas anteriormente  ---
+    private ConfigsModel LoadConfigs()
+    {
+        try
+        {
+            var path = Application.persistentDataPath + "/ConfigData.save";
+
+            if (!File.Exists(path))
+                return null; 
+
+            var binaryFormatter = new BinaryFormatter();
+
+            ConfigsModel configs;
+
+            using (var file = File.OpenRead(path))
+            {
+                configs = (ConfigsModel)binaryFormatter.Deserialize(file);
+            }
+
+            if (configs != null)
+            {
+                var option = resolution.options.Where(x => x.text == $"{configs.Resolution.Width}x{configs.Resolution.Height}").FirstOrDefault();
+
+                if (option != null)
+                {
+                    resolution.value = resolution.options.IndexOf(option);
+                }
+
+                if (configs.LimitFPS != null)
+                {
+                    textFPS.text = configs.LimitFPS.FPS.ToString();
+                    LimitFPSToggle.isOn = configs.LimitFPS.Limit;
+                }
+
+                globalVolumeSlider.value = configs.GlobalVolumeValue;
+                musicVolumeSlider.value = configs.MusicVolumeValue;
+                effectsVolumeSlider.value = configs.EffectsVolumeValue;
+            }
+
+            return configs;
+        }   
+        catch(Exception ex)
+        {
+            return null;
+        }
+    }
+
+    // --- Método privado que não retorna nenhum valor | este método salva as configurações do jogo (objetos) em uma pasta reservada que pode ser carregada posteriormente ---
+    private void SaveConfigs() 
+    {
+        var configs = new ConfigsModel();
+        
+        int FPS;
+        
+        if (!int.TryParse(textFPS.text, out FPS))
+        {
+            FPS = 60;
+        }
+
+        configs.LimitFPS = new LimitFPS()
+        {
+            FPS = FPS,
+            Limit = LimitFPSToggle.isOn
+        };
+
+        configs.GlobalVolumeValue = globalVolumeSlider.value;
+        configs.MusicVolumeValue = musicVolumeSlider.value;
+        configs.EffectsVolumeValue = effectsVolumeSlider.value;
+>>>>>>> main
 
         var resolutionModel = new Resolution();
 
@@ -115,6 +235,7 @@ public class MenuController : MonoBehaviour
                 resolutionModel.Height = 2160;
                 break;
         }
+<<<<<<< HEAD
 
         var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/Documents/";
 
@@ -123,5 +244,17 @@ public class MenuController : MonoBehaviour
 
         binaryFormatter.Serialize(file, configs);
         file.Close();
+=======
+       
+        configs.Resolution = resolutionModel;
+
+        var path = Application.persistentDataPath + "/ConfigData.save";
+
+        var binaryFormatter = new BinaryFormatter();
+        using (var file = File.Create(path))
+        {
+            binaryFormatter.Serialize(file, configs);
+        }
+>>>>>>> main
     }
 }

@@ -11,6 +11,9 @@ public class Platform : MonoBehaviour
         transform.RotateAround(alvo.position, Vector3.up, velocidade * Time.deltaTime);
     }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> main
 
 
     // --- Faz o objeto girar ao redor do alvo e se tornar filho da plataforma ao colidir ---
@@ -22,6 +25,7 @@ public class Platform : MonoBehaviour
 
 
     // --- Ao sair da plataforma, remove o objeto como filho dela ---
+<<<<<<< HEAD
 =======
     private void OnCollisionEnter(Collision collision)
     {
@@ -30,6 +34,8 @@ public class Platform : MonoBehaviour
     }
 
 >>>>>>> parent of 02c109c (atualização do player e platarforma)
+=======
+>>>>>>> main
     private void OnCollisionExit(Collision collision)
     {
         if (collision.gameObject.tag.Equals("Platform"))

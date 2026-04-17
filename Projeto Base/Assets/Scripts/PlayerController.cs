@@ -13,10 +13,13 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
     [Header("Referências")]
     public Transform cameraContainer;
+<<<<<<< HEAD
 
     [Header("Tiro")]
     public GameObject bulletPrefab;
     public Transform muzzle;
+=======
+>>>>>>> main
     private Animator animator;
     private float verticalRotation = 0f;
 
@@ -32,12 +35,18 @@ public class NewMonoBehaviourScript : MonoBehaviour
     private float forcaY;
     public float gravity = -20f;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
     // --- Trava e retira o cursor, além de pegar referências do controller e animator ---
 =======
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 >>>>>>> parent of 02c109c (atualizaÃ§Ã£o do player e platarforma)
+=======
+
+
+    // --- Trava e retira o cursor, além de pegar referências do controller e animator ---
+>>>>>>> main
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -49,10 +58,14 @@ public class NewMonoBehaviourScript : MonoBehaviour
     }
     float rotacaoY;
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
     // Update is called once per frame
 >>>>>>> parent of 02c109c (atualizaÃ§Ã£o do player e platarforma)
+=======
+    
+>>>>>>> main
     void Update()
     {
         // --- Rotação horizontal do Player (eixo Y) ---

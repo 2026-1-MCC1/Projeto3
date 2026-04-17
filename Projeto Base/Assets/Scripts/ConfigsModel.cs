@@ -2,6 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 [System.Serializable]
+<<<<<<< HEAD
 public class ConfigsModel : MonoBehaviour
 {
     // --- Modificadores de classes ---
@@ -23,6 +24,34 @@ public class ConfigsModel : MonoBehaviour
     public bool EffectsVolume { get; set; }
 
     public bool AutoSave { get; set; }
+=======
+public class ConfigsModel
+{
+    // --- Modificadores de classes ---
+    public Resolution Resolution;
+
+    public LimitFPS LimitFPS;
+
+    // --- Modificadores de acesso enumerador ---
+    public Quality Quality;
+
+    // --- Modificadores de acesso booleanos ---
+
+    public bool WindowsMode;
+
+    public bool MusicVolume;
+
+    public bool GlobalVolume;
+
+    public bool EffectsVolume;
+
+    public bool AutoSave;
+
+    // --- Modificadores de acesso para classes e variáveis ---
+    public float GlobalVolumeValue;
+    public float MusicVolumeValue;
+    public float EffectsVolumeValue;
+>>>>>>> main
 }
 
 [System.Serializable]
@@ -39,13 +68,22 @@ public enum Quality
 public class Resolution
 {
     public int Width { get; set; }
+<<<<<<< HEAD
     public int Height { get; set; }
+=======
+    public int Height;
+>>>>>>> main
 }
 
 [System.Serializable]
 // --- Modificadores de acesso booleanos para limite de FPS ---
 public class LimitFPS
 {
+<<<<<<< HEAD
     public bool Limit { get; set; }
     public int FPS { get; set; }
+=======
+    public bool Limit;
+    public int FPS;
+>>>>>>> main
 }

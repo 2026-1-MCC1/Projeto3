@@ -7,6 +7,15 @@ TagManager:
   - Ground
   - Platform
   - gameObject
+  - Rosa
+  - Amarela
+  - Azul
+  - Roxa
+  - Vermelha
+  - Laranja
+  - Verde
+  - player
+  - Enemy
   layers:
   - Default
   - TransparentFX
