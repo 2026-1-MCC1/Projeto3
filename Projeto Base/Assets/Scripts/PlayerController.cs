@@ -1,7 +1,5 @@
 using UnityEngine;
 
-
-// --- Modificadores de acesso para classes e variáveis ---
 public class NewMonoBehaviourScript : MonoBehaviour
 {
     [Header("Movimento")]
@@ -11,54 +9,85 @@ public class NewMonoBehaviourScript : MonoBehaviour
     public float mouseSensitivity = 7f;
     public float verticalClamp = 60f;
 
-    [Header("Referências")]
+    [Header("ReferÃªncias")]
     public Transform cameraContainer;
     private Animator animator;
-    private float verticalRotation = 0f;
 
     [Header("Pulo")]
-    public float jumpForce = 7f;
-    private Rigidbody rb;
-    private bool estaNoChao;
+    public float jumpForce = 17f;
+    public float gravity = -12f;
 
     [SerializeField] private Transform Foot;
-    [SerializeField] private LayerMask colisaoLayer;
 
     private CharacterController controller;
+
+    private float verticalRotation = 0f;
+    private float rotacaoY;
     private float forcaY;
-    public float gravity = -20f;
+    private bool estaNoChao;
 
+    // --- Plataforma ---
+    private Transform plataformaAtual;
+    private Vector3 lastPlatformPosition;
+    private Quaternion lastPlatformRotation;
 
-    // --- Trava e retira o cursor, além de pegar referências do controller e animator ---
+    // --- TolerÃ¢ncia (ANTI-QUEDA) ---
+    private float tempoSemPlataforma = 0f;
+    public float toleranciaPlataforma = 0.2f;
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
-        {
-            controller = GetComponent<CharacterController>();
-            animator = GetComponentInChildren<Animator>();
-        }
+
+        controller = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
     }
-    float rotacaoY;
-    
+
     void Update()
     {
-        // --- Rotação horizontal do Player (eixo Y) ---
+        // --- MOUSE ---
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity;
-
         rotacaoY += mouseX;
-
         transform.rotation = Quaternion.Euler(0f, rotacaoY, 0f);
 
-        // --- Rotação vertical da Camera (eixo X Local) ---
         float mouseY = Input.GetAxis("Mouse Y");
         verticalRotation -= mouseY;
-        verticalRotation = Mathf.Clamp(
-            verticalRotation, -verticalClamp, verticalClamp);
+        verticalRotation = Mathf.Clamp(verticalRotation, -verticalClamp, verticalClamp);
         cameraContainer.localRotation = Quaternion.Euler(verticalRotation, 0f, 0f);
 
+        // --- DETECÃ‡ÃƒO DA PLATAFORMA COM TOLERÃ‚NCIA ---
+        RaycastHit hit;
 
-        // --- Movimentação WASD / Setas ---
+        if (Physics.Raycast(Foot.position, Vector3.down, out hit, 1.2f))
+        {
+            if (hit.collider.CompareTag("Platform"))
+            {
+                tempoSemPlataforma = 0f;
+
+                if (plataformaAtual != hit.collider.transform)
+                {
+                    plataformaAtual = hit.collider.transform;
+                    lastPlatformPosition = plataformaAtual.position;
+                    lastPlatformRotation = plataformaAtual.rotation;
+                }
+            }
+            else
+            {
+                tempoSemPlataforma += Time.deltaTime;
+            }
+        }
+        else
+        {
+            tempoSemPlataforma += Time.deltaTime;
+        }
+
+        if (tempoSemPlataforma > toleranciaPlataforma)
+        {
+            plataformaAtual = null;
+        }
+
+        // --- MOVIMENTO WASD ---
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
 
@@ -73,33 +102,68 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
         Vector3 moviment = forward * v + right * h;
 
-        controller.Move(moviment * moveSpeed * Time.deltaTime);
+        // --- MOVIMENTO DA PLATAFORMA ---
+        Vector3 movimentoPlataforma = Vector3.zero;
 
-        bool estaNoChao = controller.isGrounded;
-
-        if (estaNoChao && forcaY < 0)
+        if (plataformaAtual != null)
         {
-            forcaY = -2f; // mantém colado no chão
+            Vector3 deltaPos = plataformaAtual.position - lastPlatformPosition;
+            Quaternion deltaRot = plataformaAtual.rotation * Quaternion.Inverse(lastPlatformRotation);
+
+            Vector3 relativePos = Foot.position - plataformaAtual.position;
+            Vector3 rotatedPos = deltaRot * relativePos;
+
+            Vector3 novaPos = plataformaAtual.position + rotatedPos;
+            Vector3 movimentoRotacao = novaPos - Foot.position;
+
+            Vector3 velocidadePlataforma = deltaPos / Time.deltaTime;
+
+            movimentoPlataforma = movimentoRotacao + velocidadePlataforma * Time.deltaTime;
+
+            lastPlatformPosition = plataformaAtual.position;
+            lastPlatformRotation = plataformaAtual.rotation;
         }
 
-        animator.SetBool("EstaNoChao", estaNoChao);
-        animator.SetFloat("Horizontal", h);
-        animator.SetFloat("Vertical", v);
+        // --- 1. MOVE COM A PLATAFORMA ---
+        if (plataformaAtual != null)
+        {
+            controller.Move(movimentoPlataforma);
+        }
 
-        // --- Pulo do Player ---
-        estaNoChao = Physics.CheckSphere(Foot.position, 0.3f, colisaoLayer);
-        animator.SetBool("EstaNoChao", estaNoChao);
+        // --- CHÃƒO ---
+        estaNoChao = controller.isGrounded;
 
+        if (controller.isGrounded)
+        {
+            if (forcaY < 0)
+                forcaY = -2f;
+        }
+
+        if (plataformaAtual != null && controller.isGrounded)
+        {
+            controller.Move(Vector3.down * 2f * Time.deltaTime);
+        }
+
+        // --- PULO ---
         if (Input.GetKeyDown(KeyCode.Space) && estaNoChao)
         {
-            forcaY = 5f;
+            forcaY = jumpForce;
             animator.SetTrigger("Saltar");
         }
 
-        if (forcaY > -9.81f)
-        {
-            forcaY += -9.81f * Time.deltaTime;
-        }
-        controller.Move(new Vector3(0f, forcaY, 0f) * Time.deltaTime);
+        // --- GRAVIDADE ---
+        forcaY += gravity * Time.deltaTime;
+
+        // --- MOVIMENTO DO PLAYER ---
+        Vector3 movimentoFinal =
+            moviment * moveSpeed +
+            Vector3.up * forcaY;
+
+        controller.Move(movimentoFinal * Time.deltaTime);
+
+        // --- ANIMAÃ‡ÃƒO ---
+        animator.SetBool("EstaNoChao", estaNoChao);
+        animator.SetFloat("Horizontal", h);
+        animator.SetFloat("Vertical", v);
     }
 }
