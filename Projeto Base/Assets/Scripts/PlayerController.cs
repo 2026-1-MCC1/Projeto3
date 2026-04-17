@@ -145,7 +145,7 @@ public class NewMonoBehaviourScript : MonoBehaviour
         }
 
         // --- PULO ---
-        if (Input.GetKeyDown(KeyCode.Space) && estaNoChao)
+        if (Input.GetKeyDown(KeyCode.Space) && (estaNoChao || plataformaAtual != null))
         {
             forcaY = jumpForce;
             animator.SetTrigger("Saltar");
