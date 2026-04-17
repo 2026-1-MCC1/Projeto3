@@ -281,8 +281,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9, y: 0.5, z: 0.9}
-  m_Center: {x: 0, y: 0.49999997, z: 0}
+  m_Size: {x: 1.0759975, y: 0.50000006, z: 1.0434362}
+  m_Center: {x: -0.0015549074, y: 0.5, z: -0.027193146}
 --- !u!114 &100650509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,8 +971,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0, z: 1}
-  m_Center: {x: 0.000000014901161, y: 0.105, z: -0.00000011920929}
+  m_Size: {x: 1.0996957, y: 0, z: 1.0715318}
+  m_Center: {x: -0.019069402, y: 0.10500006, z: 0.0059083886}
 --- !u!114 &410893372
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1494,8 +1494,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9, y: 0.5, z: 0.9}
-  m_Center: {x: 0, y: 0.49999997, z: 0}
+  m_Size: {x: 1.1828641, y: 0.50000006, z: 1.2290035}
+  m_Center: {x: -0.023391752, y: 0.5, z: -0.03475494}
 --- !u!114 &821738293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1862,8 +1862,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.97, y: 0, z: 0.97}
-  m_Center: {x: 0, y: 0.105, z: -0.000000007450581}
+  m_Size: {x: 1.0842643, y: 0, z: 1.1036956}
+  m_Center: {x: -0.009823433, y: 0.10500006, z: 0.006061046}
 --- !u!114 &1146898212
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2091,8 +2091,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 0, z: 1}
-  m_Center: {x: 0.00000011920929, y: 0.105, z: -0.000000007450581}
+  m_Size: {x: 1.0244424, y: 0.055874445, z: 1.0714765}
+  m_Center: {x: 0.012221273, y: 0.111314334, z: 0.007166012}
 --- !u!114 &1330348647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2930,7 +2930,7 @@ MonoBehaviour:
   mouseSensitivity: 1
   verticalClamp: 60
   cameraContainer: {fileID: 581143399}
-  jumpForce: 11
+  jumpForce: 9
   gravity: -20
   Foot: {fileID: 1278504964}
   toleranciaPlataforma: 0.2
@@ -3128,10 +3128,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ef2500cd403a3740a41757e6b320f58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerPlatformAdvanced3D
-  rbPlayer: {fileID: 0}
-  rbPlatform: {fileID: 0}
-  lastPlatformPosition: {x: 0, y: 0, z: 0}
-  lastPlatformRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &1476012518
 GameObject:
   m_ObjectHideFlags: 0
@@ -3602,8 +3598,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.97, y: 0, z: 0.97}
-  m_Center: {x: 0.000000014901161, y: 0.105, z: -0.00000011920929}
+  m_Size: {x: 1.1170317, y: 0, z: 1.0237612}
+  m_Center: {x: -0.0009582221, y: 0.10500006, z: -0.026880609}
 --- !u!114 &1665494937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3817,8 +3813,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9, y: 0.5, z: 0.9}
-  m_Center: {x: 0, y: 0.49999997, z: 0}
+  m_Size: {x: 1.0369347, y: 0.50000006, z: 1.0558417}
+  m_Center: {x: -0.004040179, y: 0.5, z: -0.004458017}
 --- !u!114 &1709071217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4594,8 +4590,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9, y: 0.5, z: 0.9}
-  m_Center: {x: 0, y: 0.49999997, z: 0}
+  m_Size: {x: 1.1595448, y: 0.50000006, z: 1.1265615}
+  m_Center: {x: -0.028865179, y: 0.5, z: -0.011671425}
 --- !u!114 &2041954896
 MonoBehaviour:
   m_ObjectHideFlags: 0
