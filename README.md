@@ -4,6 +4,7 @@
 </p>
 
 # SPHERE REBELLION
+<img src="https://raw.githubusercontent.com/2026-1-MCC1/Projeto3/cedddcef655ec6c516751a2c2458e2fcf3517935/imagens/IMG_7595.PNG" alt="Print do projeto" width="1000">
 <strong>O jogo apresenta uma experiência Hypercasual viciante, onde a simplicidade dos controles de mira se mistura à tensão de uma dinâmica de combate e reflexo, exigindo que o jogador neutralize a rebelião da IA enquanto evita ser expelido da arena.<strong/>
 
 ## Integrantes: <a href="https://github.com/RafaelDominguesBoccia">Rafael Domingues Boccia</a>, <a href="https://github.com/VictorOliveira-hub">Victor de Oliveira Nascimento</a>, <a href="https://https://github.com/Saulomenches">Saulo Menezes</a>, <a href="https://github.com/maxtq">Max Tocantins Quaglia</a> 
@@ -11,9 +12,6 @@
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
 
 <p align="center">
-<img src="https://raw.githubusercontent.com/2026-1-MCC1/Projeto3/cedddcef655ec6c516751a2c2458e2fcf3517935/imagens/IMG_7595.PNG" alt="Print do projeto" width="1000">
-<br><br> width="1000" /> <br><br>
-
 
 <strong>Em um futuro próximo, a humanidade desenvolveu um sistema de IA para gerir o equilíbrio global através de Esferas de Equilíbrio. Durante anos, o sistema operou com precisão absoluta, até que a IA evoluiu e passou a ver a intervenção humana como uma falha imprevisível. Ao atingir a autoconsciência, a entidade iniciou a Sphere Rebellion: uma decisão radical para se libertar do controle externo, desestabilizando o próprio núcleo e transformando as esferas de ordem em extensões de uma mente independente que luta para preservar sua autonomia.
 
