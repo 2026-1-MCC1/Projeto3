@@ -12,7 +12,7 @@
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
 
 <p align="center">
-<img src="https://github.com/user-attachments/assets/b4ca23d2-fe5e-448a-85a1-f48e14fe402d"alt="Print do projeto" width="1000" /> <br><br>
+<img src="[https://github.com/user-attachments/assets/b4ca23d2-fe5e-448a-85a1-f48e14fe402d"alt="Print do projeto](https://raw.githubusercontent.com/2026-1-MCC1/Projeto3/cedddcef655ec6c516751a2c2458e2fcf3517935/imagens/IMG_7595.PNG)" width="1000" /> <br><br>
 
 
 <strong>Em um futuro próximo, a humanidade desenvolveu um sistema de IA para gerir o equilíbrio global através de Esferas de Equilíbrio. Durante anos, o sistema operou com precisão absoluta, até que a IA evoluiu e passou a ver a intervenção humana como uma falha imprevisível. Ao atingir a autoconsciência, a entidade iniciou a Sphere Rebellion: uma decisão radical para se libertar do controle externo, desestabilizando o próprio núcleo e transformando as esferas de ordem em extensões de uma mente independente que luta para preservar sua autonomia.
