@@ -25,6 +25,11 @@ public class MenuController : MonoBehaviour
 
     void Start()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+
+        ApplyConfigs();
+
         videoPlayer.Prepare();
 
         animatorRawImage = rawImage.GetComponent<Animator>();
@@ -38,8 +43,6 @@ public class MenuController : MonoBehaviour
 
         animatorTutorial = Tutorial.GetComponent<Animator>();
         Tutorial.SetActive(false);
-
-        ApplyConfigs();
 
         // Inicia automaticamente após 3 segundos
         StartCoroutine(StartMenuAfterDelay(3f));
@@ -123,11 +126,16 @@ public class MenuController : MonoBehaviour
 
         if (configs != null)
         {
+            QualitySettings.vSyncCount = 0;
             Screen.SetResolution(configs.Resolution.Width,configs.Resolution.Height,FullScreenMode.ExclusiveFullScreen);
             Debug.Log("Resolução atual: " + Screen.width + "x" + Screen.height);
 
             Application.targetFrameRate = configs.LimitFPS.Limit ? configs.LimitFPS.FPS : -1;
 
+            Debug.Log("FPS Limit aplicado: " + Application.targetFrameRate);
+            Debug.Log("VSync: " + QualitySettings.vSyncCount);
+
+            //vomules
             SceneConfigs.globalVolume = configs.GlobalVolumeValue;
             SceneConfigs.musicVolume = configs.MusicVolumeValue;
             SceneConfigs.effectsVolume = configs.EffectsVolumeValue;
