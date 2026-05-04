@@ -146,6 +146,7 @@ MonoBehaviour:
   pontoDisparo2: {fileID: 260114608}
   forcaDisparo: 20
   fireRate: 1
+  cores: []
 --- !u!54 &15009750
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3068,6 +3069,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
   health: 3
+  playerRenderer: {fileID: 0}
+  corDano: {r: 1, g: 0, b: 0, a: 1}
+  duracaoFlash: 0.2
+  audioSource: {fileID: 0}
+  somDano: {fileID: 0}
 --- !u!65 &1416167654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4549,6 +4555,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 39c2de267de349847b45fd4befe3c210, type: 3}
       propertyPath: m_Name
       value: tower-round-build-a (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 39c2de267de349847b45fd4befe3c210, type: 3}
+      propertyPath: m_TagString
+      value: Platform
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
