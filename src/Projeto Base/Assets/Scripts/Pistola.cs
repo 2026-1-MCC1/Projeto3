@@ -1,6 +1,7 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 // --- Modificadores de acesso para classes e variáveis ---
@@ -12,12 +13,14 @@ public class PistolaSemiAuto : MonoBehaviour
     public float forcaDisparo = 200f;
     public float tempoEntreDisparos = 0.8f;
     public TextMeshProUGUI textoMunicao;
+    public RawImage showColor;
     public float tempoRecarga = 5f;
 
     private int munition = 30;
     private int munitionMax = 30;
     private float proximoDisparo = 0f;
     private bool recarregando = false;
+    private Color corAtual;
 
     [Header("Referências")]
     public Transform cameraContainer;
@@ -57,6 +60,8 @@ public class PistolaSemiAuto : MonoBehaviour
     private void Start()
 
     {
+        corAtual = CorAleatoria();
+        showColor.color = corAtual;
         {
             tempoEntreDisparos = 0.2f;
             proximoDisparo = Time.time;
@@ -104,7 +109,10 @@ public class PistolaSemiAuto : MonoBehaviour
         Renderer renderer = esfera.GetComponent<Renderer>();
         if (renderer != null)
         {
-            renderer.material.color = CorAleatoria();
+            renderer.material.color = corAtual;
+            corAtual = CorAleatoria();
+            showColor.color = corAtual;
+
         }
 
         // Destroy 5 segundos
@@ -115,7 +123,7 @@ public class PistolaSemiAuto : MonoBehaviour
     // --- Faz com que cada disparo possua uma cor diferente ---
     Color CorAleatoria()
     {
-        int random = Random.Range(0, 4);
+        int random = Random.Range(0, 7);
 
         switch (random)
         {
@@ -123,6 +131,9 @@ public class PistolaSemiAuto : MonoBehaviour
             case 1: return Color.green;
             case 2: return Color.red;
             case 3: return Color.yellow;
+            case 4: return Color.purple;
+            case 5: return Color.black;
+            case 6: return Color.brown;
             default: return Color.white;
         }
     }
