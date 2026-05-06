@@ -12,9 +12,9 @@ using static UnityEngine.Rendering.STP;
 public class MenuController : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public GameObject MenuInicial, MenuConfig, rawImage, Tutorial, Creditos;
+    public GameObject MenuInicial, MenuConfig, rawImage, Tutorial, Creditos, MenuFases;
 
-    private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig, animatorTutorial, animatorCreditos;
+    private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig, animatorTutorial, animatorCreditos, animatorMenuFases;
 
     public TMP_Dropdown resolution;
     public TMP_InputField textFPS;
@@ -47,6 +47,9 @@ public class MenuController : MonoBehaviour
         animatorCreditos = Creditos.GetComponent<Animator>();
         Creditos.SetActive(false);
 
+        animatorMenuFases = MenuFases.GetComponent<Animator>();
+        MenuFases.SetActive(false);
+
         // Inicia automaticamente após 3 segundos
         StartCoroutine(StartMenuAfterDelay(3f));
 
@@ -70,6 +73,7 @@ public class MenuController : MonoBehaviour
         animatorMenuConfig.SetTrigger("MenuConfigANM");
         animatorTutorial.SetTrigger("TutorialSlideIn");
         animatorCreditos.SetTrigger("CreditosSlideIn");
+        animatorMenuFases.SetTrigger("MenuFasesSlideIn");
     }
 
     public void menuConfig()
@@ -86,6 +90,7 @@ public class MenuController : MonoBehaviour
         MenuConfig.SetActive(false);
         Tutorial.SetActive(false);
         Creditos.SetActive(false);
+        MenuFases.SetActive(false);
     }
 
     public void GoToTutorial()
@@ -99,6 +104,11 @@ public class MenuController : MonoBehaviour
         Creditos.SetActive(true);
     }
 
+    public void GoToMenuFases()
+    {
+        MenuInicial.SetActive(false);
+        MenuFases.SetActive(true);
+    }
     public void Salvar()
     {
         SaveConfigs();
