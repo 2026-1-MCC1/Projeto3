@@ -1,5 +1,6 @@
-using UnityEngine;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.InputSystem.XR;
 
 
 // --- Modificadores de acesso para classes e variáveis ---
@@ -15,13 +16,20 @@ public class PlayerHealth : MonoBehaviour
     private bool tomandoDano = false;
     private SkinnedMeshRenderer[] renderers;
     private Color[] coresOriginais;
+    private CharacterController controller;
+    private Animator animator;
+    private PistolaSemiAuto pistola;
 
+    bool morto = false;
     // SOM
     public AudioSource audioSource;
     public AudioClip somDano;
 
     void Start()
     {
+        pistola = GetComponentInChildren<PistolaSemiAuto>();
+        controller = GetComponent<CharacterController>();
+        animator = GetComponentInChildren<Animator>();
         renderers = GetComponentsInChildren<SkinnedMeshRenderer>();
 
         coresOriginais = new Color[renderers.Length];
@@ -37,16 +45,19 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        if (morto) return;
+
         health -= damage;
+
         if (!tomandoDano)
         {
             StartCoroutine(FlashDano());
         }
-
-        TocarSomDano();
+    
         if (health <= 0)
         {
-            Die();
+            morto = true;
+            StartCoroutine(Die());
         }
     }
     IEnumerator FlashDano()
@@ -73,10 +84,21 @@ public class PlayerHealth : MonoBehaviour
     }
 
     // --- Faz com que o jogador morra ---
-    void Die()
+    IEnumerator Die()
     {
         Debug.Log("Jogador morreu");
 
+        animator.SetTrigger("Die");
+
+        GetComponent<CharacterController>().enabled = false;
+        var arma = GetComponentInChildren<PistolaSemiAuto>(); 
+        yield return null;
+        yield return new WaitForSeconds(4f);
         Destroy(gameObject);
+
+        if (arma != null)
+        {
+            arma.enabled = false;
+        }
     }
 }
