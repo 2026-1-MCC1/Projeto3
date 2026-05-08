@@ -1,3 +1,6 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
@@ -7,7 +10,8 @@ public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime;
-    
+
+
     void Start()
     {
 
@@ -25,6 +29,11 @@ public class Timer : MonoBehaviour
         {
             remainingTime = 0;
             timerText.color = Color.red;
+            //Exibir tela de fim de jogo
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            SceneManager.LoadScene("TelaDerrota");
+
         }
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
@@ -32,5 +41,5 @@ public class Timer : MonoBehaviour
     }
 }
 
-       
+
 
