@@ -12,9 +12,9 @@ using static UnityEngine.Rendering.STP;
 public class MenuController : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public GameObject MenuInicial, MenuConfig, rawImage, Tutorial;
+    public GameObject MenuInicial, MenuConfig, rawImage, Tutorial, Creditos, MenuFases;
 
-    private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig, animatorTutorial;
+    private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig, animatorTutorial, animatorCreditos, animatorMenuFases;
 
     public TMP_Dropdown resolution;
     public TMP_InputField textFPS;
@@ -44,6 +44,12 @@ public class MenuController : MonoBehaviour
         animatorTutorial = Tutorial.GetComponent<Animator>();
         Tutorial.SetActive(false);
 
+        animatorCreditos = Creditos.GetComponent<Animator>();
+        Creditos.SetActive(false);
+
+        animatorMenuFases = MenuFases.GetComponent<Animator>();
+        MenuFases.SetActive(false);
+
         // Inicia automaticamente após 3 segundos
         StartCoroutine(StartMenuAfterDelay(3f));
 
@@ -66,6 +72,8 @@ public class MenuController : MonoBehaviour
         animatorMenuInicial.SetTrigger("FadeInInicial");
         animatorMenuConfig.SetTrigger("MenuConfigANM");
         animatorTutorial.SetTrigger("TutorialSlideIn");
+        animatorCreditos.SetTrigger("CreditosSlideIn");
+        animatorMenuFases.SetTrigger("MenuFasesSlideIn");
     }
 
     public void menuConfig()
@@ -81,6 +89,8 @@ public class MenuController : MonoBehaviour
         MenuInicial.SetActive(true);
         MenuConfig.SetActive(false);
         Tutorial.SetActive(false);
+        Creditos.SetActive(false);
+        MenuFases.SetActive(false);
     }
 
     public void GoToTutorial()
@@ -88,7 +98,17 @@ public class MenuController : MonoBehaviour
         MenuInicial.SetActive(false);
         Tutorial.SetActive(true);
     }
+    public void GoToCredits()
+    {
+        MenuInicial.SetActive(false);
+        Creditos.SetActive(true);
+    }
 
+    public void GoToMenuFases()
+    {
+        MenuInicial.SetActive(false);
+        MenuFases.SetActive(true);
+    }
     public void Salvar()
     {
         SaveConfigs();
