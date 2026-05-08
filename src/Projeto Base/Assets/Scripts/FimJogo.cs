@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class FimJogo : MonoBehaviour
 {
+    FimJogo telaDerrota;
     public void Exibir()
     {
         this.gameObject.SetActive(true);
@@ -27,5 +28,10 @@ public class FimJogo : MonoBehaviour
     public void SairJogo()
     {
         SceneManager.LoadScene("Menu");
+    }
+
+    void Morrer()
+    {
+        telaDerrota.Exibir();
     }
 }
