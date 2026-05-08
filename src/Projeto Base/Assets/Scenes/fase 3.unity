@@ -282,6 +282,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EsferaPrincipal
   velocidadeRotacao: 30
   tempoParaMudar: 3
+--- !u!114 &15009752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15009747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb44e5bf8bc15042965e50e75b2eff7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  player: {fileID: 193470932}
+  bulletPrefab: {fileID: 5907881749714105814, guid: 595afc2de76525c439dd8dd5c897fd2c, type: 3}
+  pontoDisparo2: {fileID: 260114608}
+  forcaDisparo: 30
+  fireRate: 2
+  cores: []
 --- !u!1001 &100650503
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2263,6 +2281,7 @@ GameObject:
   - component: {fileID: 611820552}
   - component: {fileID: 611820551}
   - component: {fileID: 611820550}
+  - component: {fileID: 611820553}
   m_Layer: 5
   m_Name: Timer Text
   m_TagString: Untagged
@@ -2389,6 +2408,20 @@ RectTransform:
   m_AnchoredPosition: {x: 925, y: 390}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &611820553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 611820549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14f919b81cc42ee45852573a3bdd7c9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Timer
+  timerText: {fileID: 611820550}
+  remainingTime: 120
 --- !u!1001 &665209393
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3312,6 +3345,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 15009751}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 15009752}
   m_SourcePrefab: {fileID: 100100000, guid: cf989232603e56145b0469aefd557bb3, type: 3}
 --- !u!4 &1128030175 stripped
 Transform:

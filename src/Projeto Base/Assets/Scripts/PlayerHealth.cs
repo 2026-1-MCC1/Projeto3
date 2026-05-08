@@ -1,11 +1,13 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem.XR;
+using UnityEngine.SceneManagement;
 
 
 // --- Modificadores de acesso para classes e variáveis ---
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] FimJogo telaDerrota;
     public int health = 6;
     // VISUAL
     public Renderer playerRenderer;
@@ -91,14 +93,19 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("Die");
 
         GetComponent<CharacterController>().enabled = false;
-        var arma = GetComponentInChildren<PistolaSemiAuto>(); 
+        var arma = GetComponentInChildren<PistolaSemiAuto>();
         yield return null;
-        yield return new WaitForSeconds(4f);
-        Destroy(gameObject);
 
         if (arma != null)
         {
             arma.enabled = false;
         }
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+
+        yield return new WaitForSeconds(3f);
+
+        SceneManager.LoadScene("TelaDerrota");
     }
 }

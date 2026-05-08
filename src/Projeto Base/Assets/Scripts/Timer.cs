@@ -9,26 +9,30 @@ using TMPro;
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
-    [SerializeField] float remainingTime;
+    [SerializeField] float remainingTime = 120f;
 
 
+    bool gameOver = false;
     void Start()
     {
-
+        remainingTime = 120f;
     }
 
 
     // --- Atualiza o cronômetro, reduz o tempo e exibe na tela em minutos e segundos ---
     void Update()
     {
+        if (gameOver) return;
+
         if (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
         }
-        else if (remainingTime <= 0)
+        else
         {
-            remainingTime = 0;
-            timerText.color = Color.red;
+            remainingTime =0;
+            gameOver = true;
+
             //Exibir tela de fim de jogo
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
