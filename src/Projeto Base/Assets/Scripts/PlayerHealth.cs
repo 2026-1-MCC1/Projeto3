@@ -7,7 +7,9 @@ using UnityEngine.SceneManagement;
 // --- Modificadores de acesso para classes e variáveis ---
 public class PlayerHealth : MonoBehaviour
 {
+    [SerializeField] HealthUI healthUI;
     [SerializeField] FimJogo telaDerrota;
+
     public int health = 6;
     // VISUAL
     public Renderer playerRenderer;
@@ -43,6 +45,16 @@ public class PlayerHealth : MonoBehaviour
             // pega cor original
             coresOriginais[i] = renderers[i].material.GetColor("_BaseColor");
         }
+
+        if (healthUI == null)
+        {
+            healthUI = FindFirstObjectByType<HealthUI>();
+        }
+
+        if (healthUI != null)
+        {
+            healthUI.UpdateHearts(health);
+        }
     }
 
     public void TakeDamage(int damage)
@@ -50,6 +62,13 @@ public class PlayerHealth : MonoBehaviour
         if (morto) return;
 
         health -= damage;
+
+        if (healthUI != null)
+        {
+            healthUI.UpdateHearts(health);
+        }
+
+        healthUI?.UpdateHearts(health);
 
         if (!tomandoDano)
         {
