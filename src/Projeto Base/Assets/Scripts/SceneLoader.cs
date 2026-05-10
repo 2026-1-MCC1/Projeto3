@@ -15,7 +15,7 @@ public class SceneLoader : MonoBehaviour
     // --- Carrega a cena "Movimentação personagem versão 3" ---
     void Load1()
     {
-        SceneManager.LoadScene("Movimentação personagem versão 3");
+        SceneManager.LoadScene("fase 1");
     }
 
     public void CarregarJogo2()
