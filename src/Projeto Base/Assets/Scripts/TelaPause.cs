@@ -18,7 +18,7 @@ public class TelaPause : MonoBehaviour
     {
         Time.timeScale = 1;
         this.gameObject.SetActive(false);
-        SceneManager.LoadScene("Movimentação personagem versão 3");
+        SceneManager.LoadScene("Fase 1");
     }
     public void SairJogo()
     {

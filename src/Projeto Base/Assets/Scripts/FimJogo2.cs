@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FimJogo : MonoBehaviour
+public class FimJogo2 : MonoBehaviour
 {
     public void Exibir()
     {
@@ -21,7 +21,7 @@ public class FimJogo : MonoBehaviour
     public void TentarNovamente()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Fase 1");
+        SceneManager.LoadScene("Fase 2");
 
     }
     public void SairJogo()

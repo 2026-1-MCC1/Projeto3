@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class FimJogo : MonoBehaviour
+public class TelaPause3 : MonoBehaviour
 {
-    public void Exibir()
+    public void Ativar()
     {
         this.gameObject.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
@@ -14,15 +14,11 @@ public class FimJogo : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    public void Esconder()
-    {
-        this.gameObject.SetActive(false);
-    }
-    public void TentarNovamente()
+    public void Desativar()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Fase 1");
-
+        this.gameObject.SetActive(false);
+        SceneManager.LoadScene("Fase 3");
     }
     public void SairJogo()
     {
