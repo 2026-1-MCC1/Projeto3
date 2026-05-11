@@ -13,6 +13,7 @@ public class PlayerHealth : MonoBehaviour
     // VISUAL
     public Color corDano = Color.red;
     public float duracaoFlash = 0.2f;
+    public FimJogo fimJogo;
 
     private Color corOriginal;
     private bool tomandoDano = false;
@@ -124,8 +125,8 @@ public class PlayerHealth : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
 
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(1.5f);
 
-        SceneManager.LoadScene("TelaDerrota");
+        fimJogo.Exibir();
     }
 }
