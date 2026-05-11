@@ -42,17 +42,16 @@ public class PistolaSemiAuto : MonoBehaviour
             Atirar();
             proximoDisparo = Time.time + tempoEntreDisparos;
         }
+
         if (Input.GetKeyDown(KeyCode.R))
         {
-            munition = 30;
             StartCoroutine(Recarregar());
         }
+
         if (recarregando)
         {
             textoMunicao.text = "Recarregando...";
         }
-        if (recarregando)
-            return;
     }
 
 

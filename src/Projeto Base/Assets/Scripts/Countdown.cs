@@ -42,17 +42,13 @@ public class Countdown : MonoBehaviour
     // --- Funciona mesmo com Time.timeScale = 0 ---
     IEnumerator RealTimeWait(float time)
     {
-        // --- Variável que controla o tempo passado ---
-        float timer = 0f;
+        float timer = 0f;   // --- Variável que controla o tempo passado ---
 
         // --- Repete até atingir o tempo desejado ---
         while (timer < time)
         {
-            // --- Soma tempo real independente do jogo estar pausado ---
-            timer += Time.unscaledDeltaTime;
-
-            // --- Espera o próximo frame ---
-            yield return null;
+            timer += Time.unscaledDeltaTime;    // --- Soma tempo real independente do jogo estar pausado ---
+            yield return null;  // --- Espera o próximo frame ---
         }
     }
 }
