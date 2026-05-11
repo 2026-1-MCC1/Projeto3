@@ -6,9 +6,10 @@ using UnityEngine.UI;
 
 public class FimJogo : MonoBehaviour
 {
+    public GameObject painelDerrota;
     public void Exibir()
     {
-        this.gameObject.SetActive(true);
+        painelDerrota.SetActive(true);
         Cursor.lockState = CursorLockMode.None;
         Cursor.visible = true;
         Time.timeScale = 0;
@@ -16,15 +17,16 @@ public class FimJogo : MonoBehaviour
 
     public void Esconder()
     {
-        this.gameObject.SetActive(false);
+        painelDerrota.gameObject.SetActive(false);
     }
     public void TentarNovamente()
     {
-        Time.timeScale = 1;
-        SceneManager.LoadScene("Fase 1");
+        Time.timeScale = 1f;
 
+        Scene cenaAtual = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(cenaAtual.name);
     }
-    public void SairJogo()
+    public void irMenu()
     {
         SceneManager.LoadScene("Menu");
     }

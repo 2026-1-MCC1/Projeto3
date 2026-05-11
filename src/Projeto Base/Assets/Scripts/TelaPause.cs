@@ -1,27 +1,56 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 
 public class TelaPause : MonoBehaviour
 {
-    public void Ativar()
+    public GameObject painelPause;
+
+    public MonoBehaviour PlayerController;
+
+    private bool pausado = false;
+
+    void Update()
     {
-        this.gameObject.SetActive(true);
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
-        Time.timeScale = 0;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (pausado)
+            {
+                Retornar();
+            }
+            else
+            {
+                Pausar();
+            }
+        }
     }
 
-    public void Desativar()
+    public void Pausar()
     {
-        Time.timeScale = 1;
-        this.gameObject.SetActive(false);
-        SceneManager.LoadScene("Fase 1");
+        painelPause.SetActive(true);
+
+        Time.timeScale = 0f;
+
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+        PlayerController.enabled = false;
+        pausado = true;
     }
-    public void SairJogo()
+
+    public void Retornar()
     {
+        painelPause.SetActive(false);
+
+        Time.timeScale = 1f;
+
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        PlayerController.enabled = true;
+        pausado = false;
+    }
+
+    public void IrMenu()
+    {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("Menu");
     }
 }
