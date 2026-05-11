@@ -1016,8 +1016,6 @@ MonoBehaviour:
   showColor: {fileID: 737786124}
   coresDisponiveis:
   - tipoCor: 0
-    material: {fileID: 0}
-  - tipoCor: 0
     material: {fileID: 2100000, guid: 37734228ae8134baa86b9071ab460854, type: 2}
   - tipoCor: 1
     material: {fileID: 2100000, guid: 08daf83726bd64f72ae8b51d312d355b, type: 2}
