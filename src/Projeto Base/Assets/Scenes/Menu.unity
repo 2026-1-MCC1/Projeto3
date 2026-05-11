@@ -3150,10 +3150,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1040435993}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 21, y: -41}
-  m_SizeDelta: {x: 239.0015, y: 236.3409}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 21, y: -198}
+  m_SizeDelta: {x: -972.99854, y: 236.34088}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &729043100
 Animator:
@@ -3197,8 +3197,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Cr\xE9ditos 1\nCr\xE9ditos 2 \nCr\xE9ditos 3\nCr\xE9ditos 4\nCr\xE9ditos
-    5"
+  m_text: "Assets e anima\xE7\xF5es: Mixamo, Kenney\n\nM\xFAsica: O milagre da Via
+    L\xE1cte| Brasil C\xE9u Estrelado 2020| M\xFAsica Instrumental\n\nFontes/asset
+    site:dafont\n\nV\xEDdeos: Pixabay"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8390d967844b74a4aa44193980c05a77, type: 2}
   m_sharedMaterial: {fileID: 200012079633094208, guid: 8390d967844b74a4aa44193980c05a77, type: 2}
@@ -3232,7 +3233,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -3264,7 +3265,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 1.444519, w: 0}
+  m_margin: {x: -432.38693, y: -60.677002, z: -367.13123, w: -186.6855}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4774,7 +4775,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.036898278, y: 0.252}
   m_AnchorMax: {x: 0.26582035, y: 0.36900002}
-  m_AnchoredPosition: {x: -1, y: 3.0000458}
+  m_AnchoredPosition: {x: -1, y: 3.0000305}
   m_SizeDelta: {x: 28.680298, y: -2.1964798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975960636
