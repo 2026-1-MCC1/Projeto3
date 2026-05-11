@@ -21,7 +21,7 @@ public class PlayerHealth : MonoBehaviour
     private Color[] coresOriginais;
     private CharacterController controller;
     private Animator animator;
-    private PistolaSemiAuto pistola;
+    private Pistola pistola;
 
     public bool morto = false;
 
@@ -31,7 +31,7 @@ public class PlayerHealth : MonoBehaviour
 
     void Start()
     {
-        pistola = GetComponentInChildren<PistolaSemiAuto>();
+        pistola = GetComponentInChildren<Pistola>();
         controller = GetComponent<CharacterController>();
         animator = GetComponentInChildren<Animator>();
         renderers = GetComponentsInChildren<SkinnedMeshRenderer>();
@@ -114,7 +114,7 @@ public class PlayerHealth : MonoBehaviour
         animator.SetTrigger("Die");
 
         GetComponent<CharacterController>().enabled = false;
-        var arma = GetComponentInChildren<PistolaSemiAuto>();
+        var arma = GetComponentInChildren<Pistola>();
         yield return null;
 
         if (arma != null)
