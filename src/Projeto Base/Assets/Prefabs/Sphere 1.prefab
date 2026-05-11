@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 523130746023013465}
   m_Layer: 0
   m_Name: Sphere 1
-  m_TagString: Untagged
+  m_TagString: Bola
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -155,8 +155,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7746d53ed69724226985c74328c44338, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LancamentoBola
+  nomeCenaMenu: Menu
   efeitoEncaixe: {fileID: 0}
   clipEncaixe: {fileID: 8300000, guid: d647028ce717944d19945dc2ca8758d1, type: 3}
+  textoPontos: {fileID: 0}
 --- !u!114 &5877945481459782317
 MonoBehaviour:
   m_ObjectHideFlags: 0

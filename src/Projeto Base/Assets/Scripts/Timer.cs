@@ -15,7 +15,7 @@ public class Timer : MonoBehaviour
     bool gameOver = false;
     void Start()
     {
-        remainingTime = 120f;
+        remainingTime = 450f;
     }
 
 

@@ -17,6 +17,7 @@ TagManager:
   - player
   - Enemy
   - music
+  - Bola
   layers:
   - Default
   - TransparentFX

@@ -1,8 +1,13 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 using static CorObjeto;
 
 public class LancamentoBola : MonoBehaviour
 {
+    [Header("Menu")]
+    public string nomeCenaMenu = "Menu";
+
     public GameObject efeitoEncaixe;
     public AudioClip clipEncaixe;
 
@@ -10,6 +15,9 @@ public class LancamentoBola : MonoBehaviour
     private bool encaixado = false;
     private string corDaBola;
     private CorObjeto corObjeto;
+    private static int Pontuacao = 0;
+    private static int totalPontos = 47; 
+    private TextMeshProUGUI textoPontos;
 
     void Awake()
     {
@@ -19,6 +27,8 @@ public class LancamentoBola : MonoBehaviour
 
     void Start()
     {
+        textoPontos = GameObject.Find("Pontuacao")
+    .   GetComponent<TextMeshProUGUI>();
         if (rb == null)
         {
             Debug.LogError("[LancamentoBola] Rigidbody não encontrado em " + gameObject.name);
@@ -50,6 +60,17 @@ public class LancamentoBola : MonoBehaviour
         if (!encaixado)
             Destroy(gameObject);
     }
+    void Vitoria()
+    {
+        Debug.Log("VITÓRIA!");
+
+        Invoke(nameof(VoltarMenu), 3f);
+    }
+
+    void VoltarMenu()
+    {
+        SceneManager.LoadScene(nomeCenaMenu);
+    }
 
     void OnTriggerEnter(Collider other)
     {
@@ -60,6 +81,17 @@ public class LancamentoBola : MonoBehaviour
         AlvoCor alvo = other.GetComponent<AlvoCor>();
         if (alvo == null)
             alvo = other.GetComponentInParent<AlvoCor>();
+       Pontuacao++;
+
+        if (textoPontos != null)
+        {
+            textoPontos.text = Pontuacao + " / " + totalPontos;
+        }
+
+        if (Pontuacao >= totalPontos)
+        {
+            Vitoria();
+        }
 
         if (alvo != null && alvo.EstaOcupado())
         {
