@@ -8,11 +8,9 @@ using UnityEngine.SceneManagement;
 public class PlayerHealth : MonoBehaviour
 {
     [SerializeField] HealthUI healthUI;
-    [SerializeField] FimJogo telaDerrota;
-
+    
     public int health = 6;
     // VISUAL
-    public Renderer playerRenderer;
     public Color corDano = Color.red;
     public float duracaoFlash = 0.2f;
 
@@ -24,7 +22,8 @@ public class PlayerHealth : MonoBehaviour
     private Animator animator;
     private PistolaSemiAuto pistola;
 
-    bool morto = false;
+    public bool morto = false;
+
     // SOM
     public AudioSource audioSource;
     public AudioClip somDano;
@@ -107,6 +106,8 @@ public class PlayerHealth : MonoBehaviour
     // --- Faz com que o jogador morra ---
     IEnumerator Die()
     {
+        morto= true;
+
         Debug.Log("Jogador morreu");
 
         animator.SetTrigger("Die");

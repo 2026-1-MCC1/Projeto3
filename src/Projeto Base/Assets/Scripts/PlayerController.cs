@@ -102,6 +102,10 @@ public class NewMonoBehaviourScript : MonoBehaviour
 
         Vector3 moviment = forward * v + right * h;
 
+        if (GetComponent<PlayerHealth>().morto)
+            return;
+
+
         // --- MOVIMENTO DA PLATAFORMA ---
         Vector3 movimentoPlataforma = Vector3.zero;
 
