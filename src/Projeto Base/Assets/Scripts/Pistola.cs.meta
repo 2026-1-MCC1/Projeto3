@@ -1,2 +1,16 @@
 fileFormatVersion: 2
 guid: 7fc055079388aec49a44d60940a26aa3
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - esferaPrefab: {fileID: 12192949181247241, guid: 29f9bef4dfe12f64e99ac5c8e43356f5, type: 3}
+  - textoMunicao: {instanceID: 0}
+  - showColor: {instanceID: 0}
+  - somDisparo: {fileID: 8300000, guid: 7a91ea323fc4449f8a0509a6c665cac9, type: 3}
+  - pontoDisparo: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -42,6 +42,9 @@ public class Enemy : MonoBehaviour
             case 1: return Color.green;
             case 2: return Color.red;
             case 3: return Color.yellow;
+            case 4: return Color.purple;
+            case 5: return Color.orange;
+            case 6: return Color.pink;
             default: return Color.white;
         }
     }

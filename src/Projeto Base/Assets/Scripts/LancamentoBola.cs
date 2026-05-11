@@ -1,7 +1,7 @@
 using UnityEngine;
 using static CorObjeto;
 
-public class c : MonoBehaviour
+public class LancamentoBola : MonoBehaviour
 {
     public GameObject efeitoEncaixe;
     public AudioClip clipEncaixe;

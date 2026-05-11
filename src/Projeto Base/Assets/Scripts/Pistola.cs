@@ -88,7 +88,17 @@ public class Pistola : MonoBehaviour
 
     void Atirar()
     {
-        if (esferaPrefab == null || coresDisponiveis == null || coresDisponiveis.Length == 0) return;
+        if (esferaPrefab == null)
+        {
+            Debug.Log("Prefab da esfera está vazio");
+            return;
+        }
+
+        if (coresDisponiveis == null || coresDisponiveis.Length == 0)
+        {
+            Debug.Log("Não existem cores disponíveis");
+            return;
+        }
 
         if (somDisparo != null && audioSource != null)
             audioSource.PlayOneShot(somDisparo);
