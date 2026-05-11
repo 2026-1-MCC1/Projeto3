@@ -1,150 +1,161 @@
-using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
+using static CorObjeto;
 
-
-// --- Modificadores de acesso para classes e variáveis ---
-public class PistolaSemiAuto : MonoBehaviour
+public class Pistola : MonoBehaviour
 {
+    [System.Serializable]
+    public class ConfigCor
+    {
+        public CorBola tipoCor;
+        public Material material;
+    }
+
     [Header("Configurações do Tiro")]
     public GameObject esferaPrefab;
-    public Transform pontoDisparo;
-    public float forcaDisparo = 200f;
-    public float tempoEntreDisparos = 0.8f;
-    public TextMeshProUGUI textoMunicao;
-    public RawImage showColor;
-    public float tempoRecarga = 5f;
+    public float velocidadeDisparo = 14f;
+    public float tempoEntreDisparos = 0.3f;
+    public float forcaCima = 3f;
+    public float tempoRecarga = 3f;
 
+    [Header("UI")]
+    public TextMeshProUGUI textoMunicao;
+    public Image showColor;
+
+    [Header("Configuração das Cores")]
+    public ConfigCor[] coresDisponiveis;
+
+    [Header("Audio")]
+    public AudioClip somDisparo;
+
+    [Header("Referência")]
+    public Transform pontoDisparo;
+
+    private float proximoDisparo = 0f;
+    private ConfigCor corAtual;
+    private Camera cam;
+    private AudioSource audioSource;
     private int munition = 30;
     private int munitionMax = 30;
-    private float proximoDisparo = 0f;
     private bool recarregando = false;
-    private Color corAtual;
 
-    [Header("Referências")]
-    public Transform cameraContainer;
+    void Start()
+    {
+        cam = Camera.main;
+        audioSource = GetComponent<AudioSource>();
+        corAtual = PegarCorAleatoria();
+        AtualizarCorUI();
+        if (textoMunicao != null) textoMunicao.text = "";
+    }
 
-
-    // --- Controla tiro, recarga e atualização da munição na tela ---
     void Update()
     {
-        if (munition == 0 && !recarregando && Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Fire1") && Time.time >= proximoDisparo)
         {
-            StartCoroutine(Recarregar());
-        }
-
-        textoMunicao.text = "Balas: " + munition;
-
-        if (Input.GetButtonDown("Fire1") && Time.time >= proximoDisparo && munition > 0 && !recarregando)
-        {
-            munition--;
             Atirar();
             proximoDisparo = Time.time + tempoEntreDisparos;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
         {
-            StartCoroutine(Recarregar());
+            if (munition == 0 && !recarregando && Input.GetButtonDown("Fire1"))
+            {
+                StartCoroutine(Recarregar());
+            }
+
+            textoMunicao.text = "Balas: " + munition;
+
+            if (Input.GetButtonDown("Fire1") && Time.time >= proximoDisparo && munition > 0 && !recarregando)
+            {
+                munition--;
+                Atirar();
+                proximoDisparo = Time.time + tempoEntreDisparos;
+            }
+
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                StartCoroutine(Recarregar());
+            }
+
+            if (recarregando)
+            {
+                textoMunicao.text = "Recarregando...";
+            }
         }
 
-        if (recarregando)
-        {
-            textoMunicao.text = "Recarregando...";
-        }
     }
 
-
-    // --- Inicializa o tempo entre disparos e pega a referência da câmera principal ---
-    private void Start()
-
-    {
-        corAtual = CorAleatoria();
-        showColor.color = corAtual;
-        {
-            tempoEntreDisparos = 0.2f;
-            proximoDisparo = Time.time;
-        }
-        {
-            cameraContainer = Camera.main.transform;
-        }
-    }
-
-
-    // --- Cria um projétil na direção da câmera a partir do ponto de disparo ---
     void Atirar()
     {
-        Vector3 direcao = Camera.main.transform.forward;
+        if (esferaPrefab == null || coresDisponiveis == null || coresDisponiveis.Length == 0) return;
 
-        if (esferaPrefab == null || pontoDisparo == null)
+        if (somDisparo != null && audioSource != null)
+            audioSource.PlayOneShot(somDisparo);
+
+        ConfigCor corEscolhida = corAtual;
+
+        Vector3 origem = pontoDisparo != null ? pontoDisparo.position : cam.transform.position;
+        Vector3 direcao = cam.transform.forward;
+
+        GameObject esfera = Instantiate(esferaPrefab, origem, Quaternion.LookRotation(direcao));
+
+        Collider esferaCollider = esfera.GetComponent<Collider>();
+        if (esferaCollider != null)
         {
-            Debug.LogError("Prefab ou pontoDisparo não configurado!");
-            return;
+            Collider[] playerColliders = transform.root.GetComponentsInChildren<Collider>();
+            foreach (Collider c in playerColliders)
+                Physics.IgnoreCollision(esferaCollider, c);
         }
 
-        GameObject esfera = Instantiate(
-            esferaPrefab,
-            pontoDisparo.position,
-            Quaternion.LookRotation(direcao)
-        );
+        Renderer renderer = esfera.GetComponent<Renderer>();
+        if (renderer != null && corEscolhida.material != null)
+            renderer.material = corEscolhida.material;
 
-        // Forca RB
         Rigidbody rb = esfera.GetComponent<Rigidbody>();
         if (rb != null)
         {
-            rb.AddForce(direcao * forcaDisparo, ForceMode.Impulse);
+            rb.useGravity = true;
+            rb.linearVelocity = direcao * velocidadeDisparo + Vector3.up * forcaCima;
         }
 
-        // Ignora colisão com a arma
-        Collider colEsfera = esfera.GetComponent<Collider>();
-        Collider colArma = GetComponent<Collider>();
-
-        if (colEsfera != null && colArma != null)
+        CorObjeto corObjeto = esfera.GetComponent<CorObjeto>();
+        if (corObjeto != null)
         {
-            Physics.IgnoreCollision(colEsfera, colArma);
+            corObjeto.cor = corEscolhida.tipoCor;
+            corObjeto.InicializarCor();
         }
 
-        // Cor aleatória
-        Renderer renderer = esfera.GetComponent<Renderer>();
-        if (renderer != null)
-        {
-            renderer.material.color = corAtual;
-            corAtual = CorAleatoria();
-            showColor.color = corAtual;
+        LancamentoBola lb = esfera.GetComponent<LancamentoBola>();
+        if (lb != null)
+            lb.AgendarDestroy(5f);
+        else
+            Destroy(esfera, 5f);
 
-        }
-
-        // Destroy 5 segundos
-        Destroy(esfera, 5f);
+        corAtual = PegarCorAleatoria();
+        AtualizarCorUI();
     }
 
-
-    // --- Faz com que cada disparo possua uma cor diferente ---
-    Color CorAleatoria()
+    ConfigCor PegarCorAleatoria()
     {
-        int random = Random.Range(0, 7);
-
-        switch (random)
-        {
-            case 0: return Color.blue;
-            case 1: return Color.green;
-            case 2: return Color.red;
-            case 3: return Color.yellow;
-            case 4: return Color.purple;
-            case 5: return Color.black;
-            case 6: return Color.brown;
-            default: return Color.white;
-        }
+        if (coresDisponiveis == null || coresDisponiveis.Length == 0) return null;
+        return coresDisponiveis[Random.Range(0, coresDisponiveis.Length)];
     }
 
-    // --- Código para a recarga da arma com um certo intervalo de tempo ---
+    void AtualizarCorUI()
+    {
+        if (showColor != null && corAtual != null && corAtual.material != null)
+            showColor.color = corAtual.material.color;
+    }
+
     IEnumerator Recarregar()
     {
         recarregando = true;
 
-            yield return new WaitForSeconds(tempoRecarga);
+        yield return new WaitForSeconds(tempoRecarga);
 
-            munition = munitionMax;
-            recarregando = false;
+        munition = munitionMax;
+        recarregando = false;
     }
+
 }
