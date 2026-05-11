@@ -1,6 +1,7 @@
 using System;
 using System.IO;
 using System.Linq;
+using System.Collections;
 using System.Runtime.Serialization.Formatters.Binary;
 using TMPro;
 using UnityEngine;
@@ -8,51 +9,73 @@ using UnityEngine.UI;
 using UnityEngine.Video;
 using static UnityEngine.Rendering.STP;
 
-// --- Modificadores de acesso para classes e variáveis ---
 public class MenuController : MonoBehaviour
 {
     public VideoPlayer videoPlayer;
-    public GameObject MenuInicial, MenuConfig, rawImage, Tutorial;
-    private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig, animatorTutorial;
+    public GameObject MenuInicial, MenuConfig, rawImage, Tutorial, Creditos, MenuFases;
+
+    private Animator animatorRawImage, animatorMenuInicial, animatorMenuConfig, animatorTutorial, animatorCreditos, animatorMenuFases;
 
     public TMP_Dropdown resolution;
     public TMP_InputField textFPS;
     public Toggle LimitFPSToggle;
     public Slider globalVolumeSlider, musicVolumeSlider, effectsVolumeSlider;
+    public AudioSource videoAudioSource;
+    private SceneController sceneController;
 
-
-    // --- Prepara o vídeo, pega os animators e desativa os elementos da UI no início ---
     void Start()
     {
+        QualitySettings.vSyncCount = 0;
+        Application.targetFrameRate = 60;
+
+        ApplyConfigs();
+
         videoPlayer.Prepare();
+
         animatorRawImage = rawImage.GetComponent<Animator>();
         rawImage.SetActive(false);
+
         animatorMenuInicial = MenuInicial.GetComponent<Animator>();
         MenuInicial.SetActive(false);
+
         animatorMenuConfig = MenuConfig.GetComponent<Animator>();
         MenuConfig.SetActive(false);
+
         animatorTutorial = Tutorial.GetComponent<Animator>();
         Tutorial.SetActive(false);
+
+        animatorCreditos = Creditos.GetComponent<Animator>();
+        Creditos.SetActive(false);
+
+        animatorMenuFases = MenuFases.GetComponent<Animator>();
+        MenuFases.SetActive(false);
+
+        // Inicia automaticamente após 3 segundos
+        StartCoroutine(StartMenuAfterDelay(3f));
+
+        sceneController = FindObjectOfType<SceneController>();
     }
 
-
-    // --- Ao pressionar qualquer tecla, inicia o vídeo, ativa a UI e dispara as animações ---
-    void Update()
+    // Coroutine para delay
+    IEnumerator StartMenuAfterDelay(float delay)
     {
-        if (!videoPlayer.isPlaying && Input.anyKeyDown)
-        {
-            videoPlayer.Play();
-            rawImage.SetActive(true);
-            MenuInicial.SetActive(true);
-            animatorRawImage.SetTrigger("FadeIn");
-            animatorMenuInicial.SetTrigger("FadeInInicial");
-            animatorMenuConfig.SetTrigger("MenuConfigANM");
-            animatorTutorial.SetTrigger("TutorialSlideIn");
-        }
+        yield return new WaitForSeconds(delay);
+
+        videoPlayer.Play();
+
+        ApplyVideoVolume();
+
+        rawImage.SetActive(true);
+        MenuInicial.SetActive(true);
+
+        animatorRawImage.SetTrigger("FadeIn");
+        animatorMenuInicial.SetTrigger("FadeInInicial");
+        animatorMenuConfig.SetTrigger("MenuConfigANM");
+        animatorTutorial.SetTrigger("TutorialSlideIn");
+        animatorCreditos.SetTrigger("CreditosSlideIn");
+        animatorMenuFases.SetTrigger("MenuFasesSlideIn");
     }
 
-
-    // --- Método público que não retorna nenhum valor ---
     public void menuConfig()
     {
         LoadConfigs();
@@ -66,6 +89,8 @@ public class MenuController : MonoBehaviour
         MenuInicial.SetActive(true);
         MenuConfig.SetActive(false);
         Tutorial.SetActive(false);
+        Creditos.SetActive(false);
+        MenuFases.SetActive(false);
     }
 
     public void GoToTutorial()
@@ -73,34 +98,70 @@ public class MenuController : MonoBehaviour
         MenuInicial.SetActive(false);
         Tutorial.SetActive(true);
     }
+    public void GoToCredits()
+    {
+        MenuInicial.SetActive(false);
+        Creditos.SetActive(true);
+    }
+
+    public void GoToMenuFases()
+    {
+        MenuInicial.SetActive(false);
+        MenuFases.SetActive(true);
+    }
     public void Salvar()
     {
         SaveConfigs();
+        ApplyConfigs();
+
+        if (sceneController != null)
+            sceneController.ApplyAudio(); 
+
+        ApplyVideoVolume();
+
         ReturnMenuInicial();
     }
+
     public void ExitGame()
     {
         Application.Quit();
+    }
+
+    void ApplyVideoVolume()
+    {
+        if (videoPlayer != null)
+        {
+            float volume = (SceneConfigs.musicVolume / 100f) * (SceneConfigs.globalVolume / 100f);
+            videoAudioSource.volume = volume;
+
+            Debug.Log("Volume do vídeo: " + volume);
+
+            videoPlayer.SetDirectAudioVolume(0, volume);
+        }
     }
 
     private void ApplyConfigs()
     {
         var configs = LoadConfigs();
 
-        if(configs != null)
+        if (configs != null)
         {
-            // Aplica a resolução e o modo de janela
-            Screen.SetResolution(configs.Resolution.Width, configs.Resolution.Height, !configs.WindowsMode);
+            QualitySettings.vSyncCount = 0;
+            Screen.SetResolution(configs.Resolution.Width,configs.Resolution.Height,FullScreenMode.ExclusiveFullScreen);
+            Debug.Log("Resolução atual: " + Screen.width + "x" + Screen.height);
 
-           // Aplica o limite de FPS
-            Application.targetFrameRate = configs.LimitFPS.Limit? configs.LimitFPS.FPS : -1;
-            // Aplica os volumes
+            Application.targetFrameRate = configs.LimitFPS.Limit ? configs.LimitFPS.FPS : -1;
+
+            Debug.Log("FPS Limit aplicado: " + Application.targetFrameRate);
+            Debug.Log("VSync: " + QualitySettings.vSyncCount);
+
+            //vomules
             SceneConfigs.globalVolume = configs.GlobalVolumeValue;
             SceneConfigs.musicVolume = configs.MusicVolumeValue;
             SceneConfigs.effectsVolume = configs.EffectsVolumeValue;
         }
     }
-    // --- Método privado que não retorna nenhum valor | este método carrega as configurações do jogo (objetos) salvas anteriormente  ---
+
     private ConfigsModel LoadConfigs()
     {
         try
@@ -108,10 +169,9 @@ public class MenuController : MonoBehaviour
             var path = Application.persistentDataPath + "/ConfigData.save";
 
             if (!File.Exists(path))
-                return null; 
+                return null;
 
             var binaryFormatter = new BinaryFormatter();
-
             ConfigsModel configs;
 
             using (var file = File.OpenRead(path))
@@ -121,7 +181,9 @@ public class MenuController : MonoBehaviour
 
             if (configs != null)
             {
-                var option = resolution.options.Where(x => x.text == $"{configs.Resolution.Width}x{configs.Resolution.Height}").FirstOrDefault();
+                var option = resolution.options
+                    .Where(x => x.text == $"{configs.Resolution.Width}x{configs.Resolution.Height}")
+                    .FirstOrDefault();
 
                 if (option != null)
                 {
@@ -140,20 +202,19 @@ public class MenuController : MonoBehaviour
             }
 
             return configs;
-        }   
-        catch(Exception ex)
+        }
+        catch (Exception)
         {
             return null;
         }
     }
 
-    // --- Método privado que não retorna nenhum valor | este método salva as configurações do jogo (objetos) em uma pasta reservada que pode ser carregada posteriormente ---
-    private void SaveConfigs() 
+    private void SaveConfigs()
     {
         var configs = new ConfigsModel();
-        
+
         int FPS;
-        
+
         if (!int.TryParse(textFPS.text, out FPS))
         {
             FPS = 60;
@@ -186,12 +247,13 @@ public class MenuController : MonoBehaviour
                 resolutionModel.Height = 2160;
                 break;
         }
-       
+
         configs.Resolution = resolutionModel;
 
         var path = Application.persistentDataPath + "/ConfigData.save";
 
         var binaryFormatter = new BinaryFormatter();
+
         using (var file = File.Create(path))
         {
             binaryFormatter.Serialize(file, configs);

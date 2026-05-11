@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class SceneConfigs : MonoBehaviour
 {
-    public static float globalVolume;
-    public static float musicVolume;
-    public static float effectsVolume;
+    public static float globalVolume = 100f;
+    public static float musicVolume = 100f;
+    public static float effectsVolume = 100f;
 }

@@ -4,24 +4,6 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/TelaDerrota.unity
-    guid: 0f270541b0343704f91d31defe82ad94
-  - enabled: 1
-    path: Assets/Scenes/TelaPause.unity
-    guid: 7a11f43aaf063ac4cb5fea505032b046
-  - enabled: 1
-    path: Assets/Scenes/Menu.unity
-    guid: 301bc56883291364fb1ba01e6eee08d8
-  - enabled: 1
-    path: Assets/Scenes/fase 1.unity
-    guid: 54cff60ddc6bb0c46988f7c478d86acd
-  - enabled: 1
-    path: Assets/Scenes/fase 2.unity
-    guid: aaa256b3b50870c4aa73de73cff1e5ad
-  - enabled: 1
-    path: Assets/Scenes/fase 3.unity
-    guid: a820793c56e483348a68ae0c7a6d737c
+  m_Scenes: []
   m_configObjects: {}
   m_UseUCBPForAssetBundles: 0

@@ -724,7 +724,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.8166516, y: 0.18}
   m_AnchorMax: {x: 0.949697, y: 0.23900001}
-  m_AnchoredPosition: {x: -0.5, y: 0.67004395}
+  m_AnchoredPosition: {x: -0.5, y: 0.67022705}
   m_SizeDelta: {x: -1, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &176829258
@@ -3644,7 +3644,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -3801,7 +3801,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 8400000, guid: b4544d7275e5768468b9a54533b44ae2, type: 2}
+  m_Texture: {fileID: 8400000, guid: 69e3abeec78f44f41b14fa9312c6e5e5, type: 2}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -4215,11 +4215,11 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 941199299}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: faab18d44f584124c9447120c80cf566, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 3f88d18a3ab38964eb23b5c3ae3e88f0, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: b4544d7275e5768468b9a54533b44ae2, type: 2}
+  m_TargetTexture: {fileID: 8400000, guid: 69e3abeec78f44f41b14fa9312c6e5e5, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
@@ -4774,7 +4774,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.036898278, y: 0.252}
   m_AnchorMax: {x: 0.26582035, y: 0.36900002}
-  m_AnchoredPosition: {x: -1, y: 3}
+  m_AnchoredPosition: {x: -1, y: 3.0000458}
   m_SizeDelta: {x: 28.680298, y: -2.1964798}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &975960636
@@ -6218,7 +6218,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 62.88513, y: -4.0234222}
+  m_AnchoredPosition: {x: 62.88513, y: -4.0234375}
   m_SizeDelta: {x: 9, y: 0.51000977}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1247836498
@@ -7839,7 +7839,7 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
