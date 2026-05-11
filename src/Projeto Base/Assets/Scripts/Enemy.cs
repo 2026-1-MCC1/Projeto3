@@ -7,11 +7,10 @@ public class Enemy : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform pontoDisparo2;
 
-    public float forcaDisparo = 30f;
+    public float forcaDisparo = 20f;
     public float fireRate = 2f;
 
     private float timer;
-    public Color[] cores;
 
     void Update()
     {
@@ -32,19 +31,6 @@ public class Enemy : MonoBehaviour
             timer = 0f;
         }
     }
-    Color CorAleatoria()
-    {
-        int random = Random.Range(0, 4);
-
-        switch (random)
-        {
-            case 0: return Color.blue;
-            case 1: return Color.green;
-            case 2: return Color.red;
-            case 3: return Color.yellow;
-            default: return Color.white;
-        }
-    }
     void Atirar()
     {
         // --- Cria o disparo e o lança para a frente ---
@@ -52,15 +38,5 @@ public class Enemy : MonoBehaviour
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
         rb.linearVelocity = pontoDisparo2.forward * forcaDisparo;
-
-        //--- escolhe cor aleatória---
-        Color cor = CorAleatoria();
-        //--- aplica na bala ---
-        Renderer rend = bullet.GetComponent<Renderer>();
-
-        if (rend != null)
-        {
-            rend.material.color = cor;
-        }
     }
 }

@@ -4,7 +4,7 @@ public class EnemyBullet : MonoBehaviour
 {
     // --- Variáveis globais (EnemyBullet) ---
     public float lifeTime = 5f;
-    public int damage = 1;
+    public int damege = 1;
     void Start()
     {
         // --- Destroi o objeto após um tempo de vida ---
@@ -24,7 +24,7 @@ public class EnemyBullet : MonoBehaviour
            hit = true;
             GetComponent<Collider>().enabled = false;
             Debug.Log("Jogador atingido");
-            ph.TakeDamage(damage);
+            ph.TakeDamage(damege);
 
             Destroy(gameObject);
         }

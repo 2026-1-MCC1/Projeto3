@@ -1,12 +1,14 @@
 using UnityEngine;
 
-public class EsferaPrincipal: MonoBehaviour
+public class EsferaPrincipal : MonoBehaviour
 {
-    public float velocidadeRotacao = 100f; // velocidade do giro
-    public float tempoParaMudar = 2f;      // tempo para trocar direção
+    public float velocidadeRotacao = 100f;
+    public float velocidadeRotacaoTensa = 150f;
+    public float tempoParaMudar = 2f;
 
     private Vector3 direcao;
     private float tempo;
+    private bool modoTenso = false;
 
     void Start()
     {
@@ -15,18 +17,22 @@ public class EsferaPrincipal: MonoBehaviour
 
     void Update()
     {
-        // gira na direção atual
         transform.Rotate(direcao * velocidadeRotacao * Time.deltaTime);
 
-        // conta o tempo
         tempo += Time.deltaTime;
 
-        // muda direção depois de um tempo
         if (tempo >= tempoParaMudar)
         {
             MudarDirecao();
             tempo = 0f;
         }
+    }
+
+    public void AtivarModoTenso()
+    {
+        if (modoTenso) return;
+        modoTenso = true;
+        velocidadeRotacao = velocidadeRotacaoTensa;
     }
 
     void MudarDirecao()
