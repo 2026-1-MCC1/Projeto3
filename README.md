@@ -10,7 +10,7 @@
 
 ## Integrantes: <a href="https://github.com/RafaelDominguesBoccia">Rafael Domingues Boccia</a>, <a href="https://github.com/VictorOliveira-hub">Victor de Oliveira Nascimento</a>, <a href="https://https://github.com/Saulomenches">Saulo Menezes</a>, <a href="https://github.com/maxtq">Max Tocantins Quaglia</a> 
 
-## Professores Orientadores: <a href="https://www.linkedin.com/in/victorbarq/">Dr. Victor Von Doom</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Saitama</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Strange</a>, <a href="https://www.linkedin.com/in/victorbarq/">Me. Yoda</a>, <a href="https://www.linkedin.com/in/victorbarq/">Dr. Gero</a>
+## Professores Orientadores: <a> Adriano Felix Valente, Eduardo Savino Gomes, Renata Mumiz do Nascimento, Victor Bruno Alexander Rosetti de Quiroz, Luis Pires .</a>
 
 <p align="center">
 
@@ -23,10 +23,17 @@ Neste cenário de conflito, você assume o papel de um Operador com a missão cr
 
 -Raiz<br>
 |<br>
-|-->documentos<br>
-  &emsp;|-->antigos<br>
-  &emsp;|Documentação.docx<br>
-|-->executáveis<br>
+|-->Projeto 3 <br>
+  &emsp;|-->src<br>
+  <br><br>&emsp;|-->ProjetoBase<br>
+  &emsp;|-->Documentos<br>
+  <br>&emsp;|-->Entrega 1<br>
+  <br>&emsp;|-->Entrega 2<br>
+|<br><br>&emsp;|-->Algoritmos e Lógica de Programação<br>
+<br><br>&emsp;|-->Cálculo 1<br>
+<br><br>&emsp;|-->Jogos digitais<br>
+<br><br>&emsp;|-->Ética e pensamento computacional<br>
+<br><br>&emsp;|-->Projeto Interdisciplinar<br>
   &emsp;|-->windows<br>
   &emsp;|-->android<br>
   &emsp;|-->HTML<br>
@@ -77,16 +84,16 @@ Encontre o index.html na pasta executáveis e execute-o como uma página WEB (at
 
 ## 💻 Configuração para Desenvolvimento
 
-Descreva como instalar todas as dependências para desenvolvimento e como rodar um test-suite automatizado de algum tipo. Se necessário, faça isso para múltiplas plataformas.
+Para abrir este projeto dentro da engine da Unity, siga o passos à passo:
 
-Para abrir este projeto você necessita das seguintes ferramentas:
+Instale a Unity;
 
--<a href="https://godotengine.org/download">GODOT</a>
+Baixe os arquivos presentes Projeto Baase (Download ZIP);
 
-```sh
-make install
-npm test
-Coloque código do prompt de comnando se for necessário
+Va no UnityHUB com uma licença propria e um editor com a versão 6000.3.6f1 ou superior;
+
+Clique em add -> add from disk -> abra a pasta do jogo;
+
 ```
 
 ## 📋 Licença/License
