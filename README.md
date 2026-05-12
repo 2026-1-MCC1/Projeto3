@@ -24,8 +24,8 @@ Neste cenário de conflito, você assume o papel de um Operador com a missão cr
 -Raiz<br>
 |<br>
 |-->Projeto 3 <br>
-  cc|-->src<br>
-  <br><br>&emsp;|-->ProjetoBase<br>
+  |-->src<br>
+  &emsp;|-->ProjetoBase<br>
   &emsp;|-->Documentos<br>
   &emsp;&emsp;|-->Entrega 1<br>
   &emsp;&emsp;|-->Entrega 2<br>
