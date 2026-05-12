@@ -24,25 +24,19 @@ Neste cenário de conflito, você assume o papel de um Operador com a missão cr
 -Raiz<br>
 |<br>
 |-->Projeto 3 <br>
-  &emsp;|-->src<br>
+  cc|-->src<br>
   <br><br>&emsp;|-->ProjetoBase<br>
   &emsp;|-->Documentos<br>
-  <br>&emsp;|-->Entrega 1<br>
-  <br>&emsp;|-->Entrega 2<br>
-|<br><br>&emsp;|-->Algoritmos e Lógica de Programação<br>
-<br><br>&emsp;|-->Cálculo 1<br>
-<br><br>&emsp;|-->Jogos digitais<br>
-<br><br>&emsp;|-->Ética e pensamento computacional<br>
-<br><br>&emsp;|-->Projeto Interdisciplinar<br>
-  &emsp;|-->windows<br>
-  &emsp;|-->android<br>
-  &emsp;|-->HTML<br>
-|-->imagens<br>
-|-->src<br>
-  &emsp;|-->Backend<br>
-  &emsp;|-->Frontend<br>
-|readme.md<br>
+  &emsp;&emsp;|-->Entrega 1<br>
+  &emsp;&emsp;|-->Entrega 2<br>
+&emsp;&emsp;&emsp;|-->Algoritmos e Lógica de Programação<br>
+&emsp;&emsp;&emsp;|-->Cálculo 1<br>
+&emsp;&emsp;&emsp;|-->Jogos digitais<br>
+&emsp;&emsp;&emsp;|-->Ética e pensamento computacional<br>
+&emsp;&emsp;&emsp;|-->Projeto Interdisciplinar<br>
+  
 
+ss
 A pasta raiz contem dois arquivos que devem ser alterados:
 
 <b>README.MD</b>: Arquivo que serve como guia e explicação geral sobre seu projeto. O mesmo que você está lendo agora.
