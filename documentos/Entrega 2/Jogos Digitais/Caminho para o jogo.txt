@@ -1,0 +1,3 @@
+pasta src > projeto base > abra o projeto na unity
+
+recomendação: baixe o arquivo projeto base.zip depois abra na unity
