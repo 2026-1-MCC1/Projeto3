@@ -2365,9 +2365,6 @@ PrefabInstance:
       addedObject: {fileID: 1277439057}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1277439056}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: cf989232603e56145b0469aefd557bb3, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 1277439055}
     - targetCorrespondingSourceObject: {fileID: -8915270770852048890, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       insertIndex: -1
@@ -5828,9 +5825,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb44e5bf8bc15042965e50e75b2eff7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  player: {fileID: 0}
+  player: {fileID: 1416167650}
   bulletPrefab: {fileID: 5907881749714105814, guid: 595afc2de76525c439dd8dd5c897fd2c, type: 3}
-  pontoDisparo2: {fileID: 0}
+  pontoDisparo2: {fileID: 1727301482}
   forcaDisparo: 22
   fireRate: 2
   cores:
@@ -5841,25 +5838,6 @@ MonoBehaviour:
   - {r: 0, g: 1, b: 0, a: 1}
   - {r: 1, g: 0.54901963, b: 0, a: 1}
   - {r: 0.5411765, g: 0.16862746, b: 0.8862745, a: 1}
---- !u!114 &1277439056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1277439054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64eacfe9ef4f84428bd1332964e47972, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EsferaPrincipal
-  velocidadeRotacao: 50
-  velocidadeRotacaoTensa: 65
-  tempoParaMudar: 2
-  pontos: 0
-  totalPontos: 47
-  textoPontos: {fileID: 0}
-  nomeCenaMenu: Menu
 --- !u!135 &1277439057
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -5925,7 +5903,7 @@ MonoBehaviour:
   tempoParaMudar: 5
   pontos: 0
   totalPontos: 47
-  textoPontos: {fileID: 0}
+  textoPontos: {fileID: 1091186461}
   nomeCenaMenu: Menu
 --- !u!1 &1278102628 stripped
 GameObject:
@@ -8514,6 +8492,37 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.025, y: 0.024999997, z: 0.013332352}
   m_Center: {x: -0.000000014901161, y: -6.208088e-11, z: -0.0041661765}
+--- !u!1 &1727301481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1727301482}
+  m_Layer: 0
+  m_Name: PontoDisparoEnemy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1727301482
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1727301481}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5975, y: 19.89, z: 0.41947475}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1737160774
 GameObject:
   m_ObjectHideFlags: 0
@@ -10062,3 +10071,4 @@ SceneRoots:
   - {fileID: 1581543363}
   - {fileID: 623926771}
   - {fileID: 426940027}
+  - {fileID: 1727301482}

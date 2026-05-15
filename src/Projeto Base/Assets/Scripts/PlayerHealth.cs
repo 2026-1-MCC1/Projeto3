@@ -127,6 +127,8 @@ public class PlayerHealth : MonoBehaviour
 
         yield return new WaitForSeconds(1.5f);
 
+        LancamentoBola.Pontuacao = 0;
+
         fimJogo.Exibir();
     }
 }

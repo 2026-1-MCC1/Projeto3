@@ -15,6 +15,7 @@ public class SceneLoader : MonoBehaviour
     // --- Carrega a cena "Movimentação personagem versão 3" ---
     void Load1()
     {
+        LancamentoBola.Pontuacao = 0;
         SceneManager.LoadScene("fase 1");
     }
 
@@ -24,6 +25,7 @@ public class SceneLoader : MonoBehaviour
     }
     void Load2()
     {
+        LancamentoBola.Pontuacao = 0;
         SceneManager.LoadScene("fase 2");
     }
     public void CarregarJogo3()
@@ -32,6 +34,7 @@ public class SceneLoader : MonoBehaviour
     }
     void Load3()
     {
+        LancamentoBola.Pontuacao = 0;
         SceneManager.LoadScene("fase 3");
     }
 }

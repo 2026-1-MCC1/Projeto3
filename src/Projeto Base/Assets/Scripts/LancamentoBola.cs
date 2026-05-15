@@ -15,7 +15,7 @@ public class LancamentoBola : MonoBehaviour
     private bool encaixado = false;
     private string corDaBola;
     private CorObjeto corObjeto;
-    private static int Pontuacao = 0;
+    public static int Pontuacao = 0;
     private static int totalPontos = 47; 
     private TextMeshProUGUI textoPontos;
 
@@ -27,8 +27,7 @@ public class LancamentoBola : MonoBehaviour
 
     void Start()
     {
-        textoPontos = GameObject.Find("Pontuacao")
-    .   GetComponent<TextMeshProUGUI>();
+        textoPontos = GameObject.Find("Pontuacao").GetComponent<TextMeshProUGUI>();
         if (rb == null)
         {
             Debug.LogError("[LancamentoBola] Rigidbody não encontrado em " + gameObject.name);
