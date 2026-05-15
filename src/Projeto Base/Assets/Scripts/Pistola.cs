@@ -52,10 +52,11 @@ public class Pistola : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetButtonDown("Fire1") && Time.time >= proximoDisparo)
+        if (Input.GetButtonDown("Fire1") && Time.time >= proximoDisparo && !recarregando)
         {
             Atirar();
             proximoDisparo = Time.time + tempoEntreDisparos;
+            munition--;
         }
 
         {
