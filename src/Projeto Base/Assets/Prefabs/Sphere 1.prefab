@@ -158,7 +158,6 @@ MonoBehaviour:
   nomeCenaMenu: Menu
   efeitoEncaixe: {fileID: 0}
   clipEncaixe: {fileID: 8300000, guid: d647028ce717944d19945dc2ca8758d1, type: 3}
-  textoPontos: {fileID: 0}
 --- !u!114 &5877945481459782317
 MonoBehaviour:
   m_ObjectHideFlags: 0

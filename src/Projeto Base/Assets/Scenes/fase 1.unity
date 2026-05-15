@@ -1811,9 +1811,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaAzul
       objectReference: {fileID: 0}
+    - target: {fileID: -8734656084990592097, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Azul
+      objectReference: {fileID: 0}
     - target: {fileID: -8715078237273934806, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaRosa
+      objectReference: {fileID: 0}
+    - target: {fileID: -8715078237273934806, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Rosa
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_LocalScale.x
@@ -1871,17 +1879,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaAmarela
       objectReference: {fileID: 0}
+    - target: {fileID: -8224700253409835197, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Amarela
+      objectReference: {fileID: 0}
     - target: {fileID: -7943340702314601668, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaRosa
+      objectReference: {fileID: 0}
+    - target: {fileID: -7943340702314601668, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Rosa
       objectReference: {fileID: 0}
     - target: {fileID: -7739189329204300329, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaAmarela
       objectReference: {fileID: 0}
+    - target: {fileID: -7739189329204300329, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Amarela
+      objectReference: {fileID: 0}
     - target: {fileID: -7554685034774327655, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaVerde
+      objectReference: {fileID: 0}
+    - target: {fileID: -7554685034774327655, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Verde
       objectReference: {fileID: 0}
     - target: {fileID: -7521725354448229304, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1891,6 +1915,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaRoxa
       objectReference: {fileID: 0}
+    - target: {fileID: -7351536664374047368, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Roxa
+      objectReference: {fileID: 0}
     - target: {fileID: -7294667202850023167, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1899,13 +1927,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaAzul
       objectReference: {fileID: 0}
+    - target: {fileID: -7264558669600310178, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Azul
+      objectReference: {fileID: 0}
     - target: {fileID: -7100892848246834553, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaAmarela
       objectReference: {fileID: 0}
+    - target: {fileID: -7100892848246834553, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Amarela
+      objectReference: {fileID: 0}
     - target: {fileID: -6806754015510019261, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaAmarela
+      objectReference: {fileID: 0}
+    - target: {fileID: -6806754015510019261, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Amarela
       objectReference: {fileID: 0}
     - target: {fileID: -6633997322771204717, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1915,9 +1955,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaLaranja
       objectReference: {fileID: 0}
+    - target: {fileID: -6444481740502378477, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Laranja
+      objectReference: {fileID: 0}
     - target: {fileID: -5954462898966993694, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaRosa
+      objectReference: {fileID: 0}
+    - target: {fileID: -5954462898966993694, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Rosa
       objectReference: {fileID: 0}
     - target: {fileID: -5891036024831261408, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1927,6 +1975,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaRoxa
       objectReference: {fileID: 0}
+    - target: {fileID: -5824510187379060028, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Roxa
+      objectReference: {fileID: 0}
     - target: {fileID: -5385142785274563605, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1934,6 +1986,10 @@ PrefabInstance:
     - target: {fileID: -5363960509194324511, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaRoxa
+      objectReference: {fileID: 0}
+    - target: {fileID: -5363960509194324511, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Roxa
       objectReference: {fileID: 0}
     - target: {fileID: -5362345725072346565, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1943,6 +1999,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaLaranja
       objectReference: {fileID: 0}
+    - target: {fileID: -4646139069874011994, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Laranja
+      objectReference: {fileID: 0}
     - target: {fileID: -4590085510408075553, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1951,6 +2011,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaAzul
       objectReference: {fileID: 0}
+    - target: {fileID: -4390392797965677700, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Azul
+      objectReference: {fileID: 0}
     - target: {fileID: -4236654079472971942, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -1958,6 +2022,10 @@ PrefabInstance:
     - target: {fileID: -3893212099537913886, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaVerde
+      objectReference: {fileID: 0}
+    - target: {fileID: -3893212099537913886, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Verde
       objectReference: {fileID: 0}
     - target: {fileID: -3838546463947569473, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -1983,6 +2051,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaVermelha
       objectReference: {fileID: 0}
+    - target: {fileID: -2254359240958618967, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Vermelha
+      objectReference: {fileID: 0}
     - target: {fileID: -2182272929630108219, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2007,6 +2079,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaAzul
       objectReference: {fileID: 0}
+    - target: {fileID: -1443163256957950576, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Azul
+      objectReference: {fileID: 0}
     - target: {fileID: -1363085848824612494, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2023,6 +2099,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaRosa
       objectReference: {fileID: 0}
+    - target: {fileID: -1155751280581548556, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Rosa
+      objectReference: {fileID: 0}
     - target: {fileID: -891816635209561725, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2031,9 +2111,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaVerde
       objectReference: {fileID: 0}
+    - target: {fileID: -861565234222042966, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Verde
+      objectReference: {fileID: 0}
     - target: {fileID: -756800363741561551, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaAmarela
+      objectReference: {fileID: 0}
+    - target: {fileID: -756800363741561551, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Amarela
       objectReference: {fileID: 0}
     - target: {fileID: -480865354744158047, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2043,9 +2131,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaVermelha
       objectReference: {fileID: 0}
+    - target: {fileID: -391268320553695201, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Vermelha
+      objectReference: {fileID: 0}
     - target: {fileID: -378691057078016250, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaLaranja
+      objectReference: {fileID: 0}
+    - target: {fileID: -378691057078016250, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Laranja
       objectReference: {fileID: 0}
     - target: {fileID: -362076191995052679, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2055,9 +2151,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaRosa
       objectReference: {fileID: 0}
+    - target: {fileID: -169354537549069823, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Rosa
+      objectReference: {fileID: 0}
     - target: {fileID: -109477788782617485, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaAmarela
+      objectReference: {fileID: 0}
+    - target: {fileID: -109477788782617485, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Amarela
       objectReference: {fileID: 0}
     - target: {fileID: -70072597817881158, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2067,17 +2171,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaAmarela
       objectReference: {fileID: 0}
+    - target: {fileID: -69349290539382428, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Amarela
+      objectReference: {fileID: 0}
     - target: {fileID: 41496018208264484, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaRoxa
+      objectReference: {fileID: 0}
+    - target: {fileID: 41496018208264484, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Roxa
       objectReference: {fileID: 0}
     - target: {fileID: 274667670263199798, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaRosa
       objectReference: {fileID: 0}
+    - target: {fileID: 274667670263199798, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Rosa
+      objectReference: {fileID: 0}
     - target: {fileID: 458578712043161180, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaVermelha
+      objectReference: {fileID: 0}
+    - target: {fileID: 458578712043161180, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Vermelha
       objectReference: {fileID: 0}
     - target: {fileID: 849326716049805035, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2087,9 +2207,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: EsferaOficialSimetrica
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Vermelha
+      objectReference: {fileID: 0}
     - target: {fileID: 1365132098506396400, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaVerde
+      objectReference: {fileID: 0}
+    - target: {fileID: 1365132098506396400, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Verde
       objectReference: {fileID: 0}
     - target: {fileID: 1525910480733267460, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2107,6 +2235,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaVermelha
       objectReference: {fileID: 0}
+    - target: {fileID: 2510846908798577046, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Vermelha
+      objectReference: {fileID: 0}
     - target: {fileID: 2586030510257793500, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2123,9 +2255,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaVermelha
       objectReference: {fileID: 0}
+    - target: {fileID: 3275057994785654923, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Vermelha
+      objectReference: {fileID: 0}
     - target: {fileID: 3360794573044678127, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaAzul
+      objectReference: {fileID: 0}
+    - target: {fileID: 3360794573044678127, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Azul
       objectReference: {fileID: 0}
     - target: {fileID: 3678716406857755550, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2134,6 +2274,10 @@ PrefabInstance:
     - target: {fileID: 3735102090226358198, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaLaranja
+      objectReference: {fileID: 0}
+    - target: {fileID: 3735102090226358198, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Laranja
       objectReference: {fileID: 0}
     - target: {fileID: 3739766106693942316, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2151,6 +2295,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaRoxa
       objectReference: {fileID: 0}
+    - target: {fileID: 4170927362537532063, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Roxa
+      objectReference: {fileID: 0}
     - target: {fileID: 4314511514184891259, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2159,9 +2307,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaAzul
       objectReference: {fileID: 0}
+    - target: {fileID: 4598841132471303540, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Azul
+      objectReference: {fileID: 0}
     - target: {fileID: 4864342965330004576, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaLaranja
+      objectReference: {fileID: 0}
+    - target: {fileID: 4864342965330004576, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Laranja
       objectReference: {fileID: 0}
     - target: {fileID: 5102563053575707307, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2170,6 +2326,10 @@ PrefabInstance:
     - target: {fileID: 5305811646100826088, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaAmarela
+      objectReference: {fileID: 0}
+    - target: {fileID: 5305811646100826088, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Amarela
       objectReference: {fileID: 0}
     - target: {fileID: 5322786556450883367, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2191,13 +2351,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaRosa
       objectReference: {fileID: 0}
+    - target: {fileID: 6210448001901403125, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Rosa
+      objectReference: {fileID: 0}
     - target: {fileID: 6841839496841503353, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaVermelha
       objectReference: {fileID: 0}
+    - target: {fileID: 6841839496841503353, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Vermelha
+      objectReference: {fileID: 0}
     - target: {fileID: 7132301690542628590, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaVerde
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132301690542628590, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Verde
       objectReference: {fileID: 0}
     - target: {fileID: 7257811793946535383, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2207,9 +2379,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaRoxa
       objectReference: {fileID: 0}
+    - target: {fileID: 7620653168905280611, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Roxa
+      objectReference: {fileID: 0}
     - target: {fileID: 7659588782278883528, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaVermelha
+      objectReference: {fileID: 0}
+    - target: {fileID: 7659588782278883528, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Vermelha
       objectReference: {fileID: 0}
     - target: {fileID: 8161674006295735255, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
@@ -2219,6 +2399,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaVerde
       objectReference: {fileID: 0}
+    - target: {fileID: 8243421399574293513, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Verde
+      objectReference: {fileID: 0}
     - target: {fileID: 8278186682188006839, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2227,6 +2411,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CestaLaranja
       objectReference: {fileID: 0}
+    - target: {fileID: 8359469538266842993, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Laranja
+      objectReference: {fileID: 0}
     - target: {fileID: 8521902485874960664, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
@@ -2234,6 +2422,10 @@ PrefabInstance:
     - target: {fileID: 9146507705029357759, guid: cf989232603e56145b0469aefd557bb3, type: 3}
       propertyPath: m_Name
       value: CestaAzul
+      objectReference: {fileID: 0}
+    - target: {fileID: 9146507705029357759, guid: cf989232603e56145b0469aefd557bb3, type: 3}
+      propertyPath: m_TagString
+      value: Azul
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -9604,7 +9796,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   player: {fileID: 1416167650}
   bulletPrefab: {fileID: 5907881749714105814, guid: 595afc2de76525c439dd8dd5c897fd2c, type: 3}
-  pontoDisparo2: {fileID: 1575753019}
+  pontoDisparo2: {fileID: 0}
   forcaDisparo: 22
   fireRate: 2
   cores:
