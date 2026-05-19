@@ -150,7 +150,16 @@ public class MenuController : MonoBehaviour
             Screen.SetResolution(configs.Resolution.Width,configs.Resolution.Height,FullScreenMode.ExclusiveFullScreen);
             Debug.Log("Resolução atual: " + Screen.width + "x" + Screen.height);
 
-            Application.targetFrameRate = configs.LimitFPS.Limit ? configs.LimitFPS.FPS : -1;
+            if (configs.LimitFPS.Limit)
+            {
+                Application.targetFrameRate = configs.LimitFPS.FPS;
+            }
+            else
+            {
+                Application.targetFrameRate = Screen.currentResolution.refreshRateRatio.value > 0
+                    ? (int)Screen.currentResolution.refreshRateRatio.value
+                    : 60;
+            }
 
             Debug.Log("FPS Limit aplicado: " + Application.targetFrameRate);
             Debug.Log("VSync: " + QualitySettings.vSyncCount);
@@ -222,7 +231,7 @@ public class MenuController : MonoBehaviour
 
         configs.LimitFPS = new LimitFPS()
         {
-            FPS = FPS,
+            FPS = LimitFPSToggle.isOn ? FPS : 0,
             Limit = LimitFPSToggle.isOn
         };
 

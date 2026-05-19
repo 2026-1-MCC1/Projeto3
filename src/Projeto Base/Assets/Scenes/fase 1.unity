@@ -4832,7 +4832,7 @@ MonoBehaviour:
   velocidadeDisparo: 14
   tempoEntreDisparos: 0.8
   forcaCima: 3
-  tempoRecarga: 5
+  tempoRecarga: 3
   textoMunicao: {fileID: 1928820766}
   showColor: {fileID: 296074687}
   coresDisponiveis:

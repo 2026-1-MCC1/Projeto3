@@ -7891,7 +7891,7 @@ MonoBehaviour:
   - tipoCor: 6
     material: {fileID: 2100000, guid: fea0cf270b14041f3ada2c261d3e3371, type: 2}
   somDisparo: {fileID: 8300000, guid: 7a91ea323fc4449f8a0509a6c665cac9, type: 3}
-  pontoDisparo: {fileID: 0}
+  pontoDisparo: {fileID: 1036866852}
 --- !u!1 &1562499036
 GameObject:
   m_ObjectHideFlags: 0
@@ -8739,7 +8739,6 @@ GameObject:
   - component: {fileID: 1815342095}
   - component: {fileID: 1815342094}
   - component: {fileID: 1815342098}
-  - component: {fileID: 1815342099}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -8850,18 +8849,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   timerText: {fileID: 611820550}
   remainingTime: 5
---- !u!114 &1815342099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1815342093}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cffc2df959f83e4b8dcafd74cb39dda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::InGame
 --- !u!4 &1822231115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 91859dc4bc3073d4faf920372641c6ec, type: 3}
