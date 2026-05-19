@@ -8828,7 +8828,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TelaPause
   painelPause: {fileID: 727954581}
-  PlayerController: {fileID: 193470929}
+  PlayerController: {fileID: 0}
 --- !u!1 &1904885000 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3735102090226358198, guid: cf989232603e56145b0469aefd557bb3, type: 3}

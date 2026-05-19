@@ -1,32 +1,20 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using static CorObjeto;
 
 public class AlvoCor : MonoBehaviour
 {
     public CorBola cor;
 
-    private bool ocupado = false;
-   
-    public bool EstaOcupado()
+    private GameObject bolaAtual;
+
+    public bool TentarOcupar(GameObject bola)
     {
-        return ocupado;
-    }
+        // já existe bola nesse buraco
+        if (bolaAtual != null)
+            return false;
 
-    public void Ocupar()
-    {
-        if (ocupado) return;
+        bolaAtual = bola;
 
-        ocupado = true;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (ocupado) return;
-
-        if (other.CompareTag("Bola"))
-        {
-            Ocupar();
-        }
+        return true;
     }
 }

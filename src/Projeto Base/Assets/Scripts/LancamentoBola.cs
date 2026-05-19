@@ -73,14 +73,46 @@ public class LancamentoBola : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (encaixado) return;
-        if (string.IsNullOrEmpty(corDaBola)) return;
-        if (!other.CompareTag(corDaBola)) return;
+        // impede chamadas duplicadas
+        if (encaixado)
+            return;
+
+        if (string.IsNullOrEmpty(corDaBola))
+            return;
+
+        if (!other.CompareTag(corDaBola))
+            return;
 
         AlvoCor alvo = other.GetComponent<AlvoCor>();
+
         if (alvo == null)
             alvo = other.GetComponentInParent<AlvoCor>();
-       Pontuacao++;
+
+        // tenta ocupar o buraco
+        if (alvo != null)
+        {
+            if (!alvo.TentarOcupar(gameObject))
+            {
+                Destroy(gameObject);
+                return;
+            }
+        }
+
+        encaixado = true;
+
+        rb.detectCollisions = false;
+
+        // DESATIVA O TRIGGER DO BURACO
+        other.enabled = false;
+
+        // desativa colisão da bola
+        Collider col = GetComponent<Collider>();
+
+        if (col != null)
+            col.enabled = false;
+
+        // pontuação
+        Pontuacao++;
 
         if (textoPontos != null)
         {
@@ -92,17 +124,6 @@ public class LancamentoBola : MonoBehaviour
             Vitoria();
         }
 
-        if (alvo != null && alvo.EstaOcupado())
-        {
-            Debug.Log("[LancamentoBola] Cesta já ocupada, ignorando!");
-            return;
-        }
-
-        encaixado = true;
-
-        if (alvo != null)
-            alvo.Ocupar();
-
         CancelInvoke("AutoDestroy");
 
         rb.linearVelocity = Vector3.zero;
@@ -110,25 +131,42 @@ public class LancamentoBola : MonoBehaviour
         rb.useGravity = false;
         rb.isKinematic = true;
 
-        transform.position = other.transform.position;
-        transform.SetParent(other.transform);
+        Transform alvoTransform = other.transform;
 
+        if (alvo != null)
+            alvoTransform = alvo.transform;
+
+        transform.position = alvoTransform.position;
+        transform.SetParent(alvoTransform);
+
+        // som
         if (clipEncaixe != null)
         {
             GameObject somObj = new GameObject("SomEncaixeTemp");
+
             AudioSource src = somObj.AddComponent<AudioSource>();
+
             src.clip = clipEncaixe;
             src.Play();
+
             Destroy(somObj, 3f);
         }
 
+        // efeito
         if (efeitoEncaixe != null)
         {
-            GameObject efeito = Instantiate(efeitoEncaixe, transform.position, Quaternion.identity);
+            GameObject efeito = Instantiate(
+                efeitoEncaixe,
+                transform.position,
+                Quaternion.identity
+            );
+
             Destroy(efeito, 3f);
         }
 
+        // música
         GerenciadorMusica gm = FindObjectOfType<GerenciadorMusica>();
+
         if (gm != null)
             gm.CestaPreenchida();
     }
