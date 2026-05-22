@@ -4,46 +4,57 @@ using UnityEngine.SceneManagement;
 using UnityEngine;
 using TMPro;
 
-
-// --- Modificadores de acesso para classes e variáveis ---
 public class Timer : MonoBehaviour
 {
     [SerializeField] TextMeshProUGUI timerText;
     [SerializeField] float remainingTime = 120f;
-
-
+    [SerializeField] FimJogo fimJogo;
+    [SerializeField] AudioClip sirene;
     bool gameOver = false;
+    bool sireneTocouu = false;
+    AudioSource audioSource;
+
     void Start()
     {
-        remainingTime = 450f;
+        remainingTime = 120f;
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+            audioSource = gameObject.AddComponent<AudioSource>();
     }
 
-
-    // --- Atualiza o cronômetro, reduz o tempo e exibe na tela em minutos e segundos ---
     void Update()
     {
         if (gameOver) return;
 
+        if (LancamentoBola.Pontuacao >= 47)
+        {
+            gameOver = true;
+            return;
+        }
+
         if (remainingTime > 0)
         {
             remainingTime -= Time.deltaTime;
+
+            // Toca sirene quando faltar 30 segundos
+            if (remainingTime <= 30f && !sireneTocouu)
+            {
+                sireneTocouu = true;
+                if (sirene != null && audioSource != null)
+                    audioSource.PlayOneShot(sirene);
+            }
         }
         else
         {
-            remainingTime =0;
+            remainingTime = 0;
             gameOver = true;
 
-            //Exibir tela de fim de jogo
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-            SceneManager.LoadScene("TelaDerrota");
-
+            if (fimJogo != null)
+                fimJogo.Exibir();
         }
+
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
         timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
     }
 }
-
-
-

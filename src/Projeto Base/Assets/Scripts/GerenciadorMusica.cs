@@ -63,7 +63,8 @@ public class GerenciadorMusica : MonoBehaviour
                 c.enabled = false;
         }
 
-        Invoke("FalarNightmare", 10f);
+        // Nightmare toca 3 segundos após o início
+        Invoke("FalarNightmare", 3f);
     }
 
     void Update()
@@ -85,7 +86,8 @@ public class GerenciadorMusica : MonoBehaviour
         if (nightmare != null && audioSource != null)
         {
             audioSource.PlayOneShot(nightmare);
-            Invoke("FalarKid", nightmare.length + 20f);
+            // Após nightmare terminar, começa as falas aleatórias
+            Invoke("FalarKid", nightmare.length + 5f);
         }
     }
 
@@ -124,12 +126,26 @@ public class GerenciadorMusica : MonoBehaviour
     {
         tocandoTensa = true;
 
+        // Para todas as falas normais
         CancelInvoke("FalarNightmare");
         CancelInvoke("FalarKid");
         CancelInvoke("FalarAleatorio");
 
-        if (musicaNormal != null) musicaNormal.Stop();
-        if (musicaTensa != null) musicaTensa.Play();
+        // Para música normal
+        if (musicaNormal != null)
+        {
+            musicaNormal.Stop();
+            musicaNormal.volume = 0f;
+            musicaNormal.enabled = false;
+            musicaNormal.gameObject.SetActive(false);
+        }
+
+        // Toca música tensa
+        if (musicaTensa != null)
+        {
+            musicaTensa.volume = 1f;
+            musicaTensa.Play();
+        }
 
         if (luzDirecional != null)
             luzDirecional.intensity = intensidadeTensa;
@@ -147,6 +163,7 @@ public class GerenciadorMusica : MonoBehaviour
         if (esferaPrincipal != null)
             esferaPrincipal.AtivarModoTenso();
 
+        // Sequência de áudio da tensão
         Invoke("TocarNotControlMe", tempoParaNotControlMe);
     }
 
