@@ -39,28 +39,14 @@ Neste cenário de conflito, você assume o papel de um Operador com a missão cr
 
 ## 🛠 Instalação
 
-<b>Android:</b>
+<b>Web:</b>
 
-Faça o Download do JOGO.apk no seu celular.
-Execute o APK e siga as instruções de seu telefone.
-
-```sh
-Coloque código do prompt de comnando se for necessário
-```
-
-<b>Windows:</b>
-
-Não há instalação! Apenas executável!
-Encontre o JOGO.exe na pasta executáveis e execute-o como qualquer outro programa.
+Para a reprodução do jogo acesse o link abaixo!
 
 ```sh
-Coloque código do prompt de comnando se for necessário
+https://saulomenezes.itch.io/sphere-rebellion
 ```
 
-<b>HTML:</b>
-
-Não há instalação!
-Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
 
 ## 💻 Configuração para Desenvolvimento
 
